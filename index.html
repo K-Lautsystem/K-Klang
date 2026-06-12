@@ -35,6 +35,15 @@
 function deToKlaut() {
   const t = document.getElementById("deInput").value.toLowerCase();
 
+ function toKlaut(t) {
+
+  // 1. Mehrbuchstaben-Regeln zuerst
+  t = t.replace(/ie/g, "I");   // ie → I (Platzhalter)
+  t = t.replace(/sch/g, "S");  // sch → S
+  t = t.replace(/ch/g, "C");   // ch → C
+  t = t.replace(/ng/g, "G");   // ng → G
+
+  // 2. Einzelbuchstaben-Mapping
   const map = {
     a:"ㅏ", ä:"ㅐ",
     e:"ㅔ",
@@ -57,15 +66,20 @@ function deToKlaut() {
     w:"ㅜ",
     j:"ㅈ",
     y:"ㅣ",
-    ß:"ㅆ"
+    ß:"ㅆ",
+
+    // Platzhalter zurückwandeln
+    I:"ㅣ",   // ie
+    S:"ㅅㅎ", // sch
+    C:"ㆆ",   // ch
+    G:"ㅇ"    // ng
   };
 
   let out = "";
   for (let ch of t) out += (map[ch] || "");
-
-  document.getElementById("klautOutput").innerText = out;
-  document.getElementById("klautInput").value = out; // automatisch in Feld 2 einfügen
+  return out;
 }
+
 
 /* ======================================
    K‑Laut → Koreanische Hangul‑Silben
