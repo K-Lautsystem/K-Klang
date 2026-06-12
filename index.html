@@ -1,70 +1,106 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>K-Laut System V3</title>
-</head>
+<h2>Deutsch → K‑Laut → Koreanische Buchstaben</h2>
 
-<body>
+<!-- ========================= -->
+<!-- CODE 1: Deutsch → K‑Laut -->
+<!-- ========================= -->
 
-<!-- =========================
-     🟡 TEXT / BEISPIELE
-========================= -->
+<h3>1. Deutsch → K‑Laut Zerlegung</h3>
+<input id="deInput" type="text" placeholder="Deutsch eingeben">
+<button onclick="deToKlaut()">Umwandeln</button>
 
-<h1>K-Laut System V3</h1>
-
-<p>Deutsch → K-Laut Zerlegung (Maschinen-Lautsystem)</p>
-
-<p>Beispiele:</p>
-
-<ul>
-  <li>hallo → ㅎㅏㄹㄹㅗ</li>
-  <li>test → ㅌㅔㅅㅌ</li>
-  <li>korea → ㅋㅗㄹㅣㅏ</li>
-</ul>
+<div>
+  <strong>K‑Laut Zerlegung:</strong>
+  <div id="klautOutput" style="font-size: 1.4em; margin-top: 5px;"></div>
+</div>
 
 <hr>
 
-<!-- =========================
-     🟢 EINGABE
-========================= -->
+<!-- ====================================== -->
+<!-- CODE 2: K‑Laut → Koreanische Silben -->
+<!-- ====================================== -->
 
-<input id="inputText" type="text" placeholder="Wort eingeben">
-<button onclick="toK()">Umwandeln</button>
+<h3>2. K‑Laut → Koreanische Buchstaben</h3>
+<input id="klautInput" type="text" placeholder="ㅎㅏㄹㄹㅗ eingeben">
+<button onclick="klautToHangul()">Umwandeln</button>
 
-<h3>Output:</h3>
-<div id="output"></div>
-
-<hr>
-
-<!-- =========================
-     🔵 CODE (ENGINE)
-========================= -->
+<div>
+  <strong>Koreanisch:</strong>
+  <div id="hangulOutput" style="font-size: 1.6em; margin-top: 5px;"></div>
+</div>
 
 <script>
-function toK() {
+/* ===========================
+   Deutsch → K‑Laut Zerlegung
+   =========================== */
+function deToKlaut() {
+  const t = document.getElementById("deInput").value.toLowerCase();
 
-  let t = document.getElementById("inputText").value.toLowerCase();
-
-  // 🔧 K-LAUT BASIS MAP
   const map = {
-    a:"ㅏ", ä:"ㅐ", e:"ㅔ", i:"ㅣ", o:"ㅗ", u:"ㅜ",
-    b:"ㅂ", p:"ㅍ", d:"ㄷ", t:"ㅌ",
-    g:"ㄱ", k:"ㅋ", h:"ㅎ",
-    m:"ㅁ", n:"ㄴ", l:"ㄹ", r:"ㄹ",
-    s:"ㅅ", z:"ㅈ", f:"ㅍ", v:"ㅂ",
-    w:"ㅜ", j:"ㅈ", y:"ㅣ", ß:"ㅆ"
+    a:"ㅏ", ä:"ㅐ",
+    e:"ㅔ",
+    i:"ㅣ",
+    o:"ㅗ", ö:"ㅚ",
+    u:"ㅜ", ü:"ㅠ",
+
+    b:"ㅂ", p:"ㅍ",
+    d:"ㄷ", t:"ㅌ",
+    g:"ㄱ", k:"ㅋ",
+    h:"ㅎ",
+    m:"ㅁ",
+    n:"ㄴ",
+    l:"ㄹ",
+    r:"ㄹ",
+    s:"ㅅ",
+    z:"ㅈ",
+    f:"ㅍ",
+    v:"ㅂ",
+    w:"ㅜ",
+    j:"ㅈ",
+    y:"ㅣ",
+    ß:"ㅆ"
   };
 
   let out = "";
+  for (let ch of t) out += (map[ch] || "");
 
-  for (let ch of t) {
-    out += (map[ch] || ch);
+  document.getElementById("klautOutput").innerText = out;
+  document.getElementById("klautInput").value = out; // automatisch in Feld 2 einfügen
+}
+
+/* ======================================
+   K‑Laut → Koreanische Hangul‑Silben
+   ====================================== */
+function composeHangul(jamos) {
+  const CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ".split('');
+  const JUNG = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ".split('');
+  const JONG = ["","ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+
+  let res = "";
+  let i = 0;
+
+  while (i < jamos.length) {
+    const cho = jamos[i++];
+    const jung = jamos[i++];
+    let jong = "";
+
+    if (i < jamos.length && JONG.includes(jamos[i])) {
+      jong = jamos[i++];
+    }
+
+    const code =
+      0xAC00 +
+      CHO.indexOf(cho) * 21 * 28 +
+      JUNG.indexOf(jung) * 28 +
+      JONG.indexOf(jong);
+
+    res += String.fromCharCode(code);
   }
+  return res;
+}
 
-  document.getElementById("output").innerText = out;
+function klautToHangul() {
+  const t = document.getElementById("klautInput").value.trim();
+  const jamos = [...t];
+  document.getElementById("hangulOutput").innerText = composeHangul(jamos);
 }
 </script>
-
-</body>
-</html>
