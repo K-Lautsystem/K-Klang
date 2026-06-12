@@ -32,16 +32,21 @@
 /* ===========================
    Deutsch → K‑Laut Zerlegung
    =========================== */
+
 function deToKlaut() {
   const t = document.getElementById("deInput").value.toLowerCase();
+  const out = toKlaut(t);
+  document.getElementById("klautOutput").innerText = out;
+  document.getElementById("klautInput").value = out;
+}
 
- function toKlaut(t) {
+function toKlaut(t) {
 
   // 1. Mehrbuchstaben-Regeln zuerst
-  t = t.replace(/ie/g, "I");   // ie → I (Platzhalter)
-  t = t.replace(/sch/g, "S");  // sch → S
-  t = t.replace(/ch/g, "C");   // ch → C
-  t = t.replace(/ng/g, "G");   // ng → G
+  t = t.replace(/ie/g, "I");
+  t = t.replace(/sch/g, "S");
+  t = t.replace(/ch/g, "C");
+  t = t.replace(/ng/g, "G");
 
   // 2. Einzelbuchstaben-Mapping
   const map = {
@@ -68,11 +73,10 @@ function deToKlaut() {
     y:"ㅣ",
     ß:"ㅆ",
 
-    // Platzhalter zurückwandeln
-    I:"ㅣ",   // ie
-    S:"ㅅㅎ", // sch
-    C:"ㆆ",   // ch
-    G:"ㅇ"    // ng
+    I:"ㅣ",
+    S:"ㅅㅎ",
+    C:"ㆆ",
+    G:"ㅇ"
   };
 
   let out = "";
