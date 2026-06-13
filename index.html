@@ -33,17 +33,6 @@
    Deutsch → K‑Laut Zerlegung
    =========================== */
 
-  ... toKlaut()
-  ... deToKlaut()
-  ... Hangul-Funktion
-
-function deToKlaut() {
-  const t = document.getElementById("deInput").value.toLowerCase();
-  const out = toKlaut(t);
-  document.getElementById("klautOutput").innerText = out;
-  document.getElementById("klautInput").value = out;
-}
-
 function toKlaut(t) {
 
   // 1. Mehrbuchstaben-Regeln zuerst
