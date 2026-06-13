@@ -1,28 +1,43 @@
-# K-KLANGALPHABET – MINIMALER SYSTEMCODE
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>K‑Klangalphabet Test</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+input { width: 300px; padding: 5px; }
+button { padding: 6px 12px; margin-left: 10px; }
+</style>
+</head>
+<body>
 
-## 1. STIMMEN (7 Energieformen)
-A  = Ursprung / Atem  
-S  = Söl-Stimme (erste Spannung)  
-U  = Sun-Stimme (Resonanz)  
-C  = Chi-Stimme (Impuls, Druck)  
-BS = Ban-Söl (halb Spannung, halb Resonanz)  
-BC = Ban-Chi (halb Impuls, halb Spannung)  
-H  = Hu-Stimme (tiefe Resonanz)  
+<h2>Deutsch → K‑Laut Zerlegung</h2>
+<input id="deutsch" placeholder="habe">
+<button onclick="deutschZuK()">Umwandeln</button>
 
-## 2. ACHSEN (3 Formdimensionen)
-E0–E4 = Energie-Achse  
-V0–V4 = Vertikal-Achse  
-H0–H4 = Horizontal-Achse  
+<p><b>K‑Laut Zerlegung:</b> <span id="klaut1"></span></p>
 
-## 3. BANJÖL-PHASEN (3 Klangphasen)
-B0 = Startimpuls  
-B1 = Resonanzkern  
-B2 = Abschlussimpuls  
+<hr>
 
-## 4. K-LAUT-CODE (offizielle Struktur)
-[STIMME]-E<V>-V<V>-H<V>-B<V>
+<h2>K‑Laut → Koreanische Buchstaben</h2>
+<input id="klaut" placeholder="ㅎㅏㄹㄹㅗ">
+<button onclick="kZuKo()">Umwandeln</button>
 
-## 5. BEISPIELE
-U-E1V4H2-B1   = weicher Vokal  
-C-E3V1H4-B0   = harter Anfang  
-BS-E1V2H1-B2  = nasaler Endlaut  
+<p><b>Koreanisch:</b> <span id="koreanisch"></span></p>
+
+<script>
+// Beispiel-Funktion 1
+function deutschZuK() {
+    let wort = document.getElementById("deutsch").value;
+    document.getElementById("klaut1").innerText = "U-E1V4H2-B1 (Beispiel)";
+}
+
+// Beispiel-Funktion 2
+function kZuKo() {
+    let klaut = document.getElementById("klaut").value;
+    document.getElementById("koreanisch").innerText = "할로 (Beispiel)";
+}
+</script>
+
+</body>
+</html>
