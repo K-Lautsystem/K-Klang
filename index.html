@@ -1,117 +1,28 @@
-<h2>Deutsch → K‑Laut → Koreanische Buchstaben</h2>
+# K-KLANGALPHABET – MINIMALER SYSTEMCODE
 
-<!-- ========================= -->
-<!-- CODE 1: Deutsch → K‑Laut -->
-<!-- ========================= -->
+## 1. STIMMEN (7 Energieformen)
+A  = Ursprung / Atem  
+S  = Söl-Stimme (erste Spannung)  
+U  = Sun-Stimme (Resonanz)  
+C  = Chi-Stimme (Impuls, Druck)  
+BS = Ban-Söl (halb Spannung, halb Resonanz)  
+BC = Ban-Chi (halb Impuls, halb Spannung)  
+H  = Hu-Stimme (tiefe Resonanz)  
 
-<h3>1. Deutsch → K‑Laut Zerlegung</h3>
-<input id="deInput" type="text" placeholder="Deutsch eingeben">
-<button onclick="deToKlaut()">Umwandeln</button>
+## 2. ACHSEN (3 Formdimensionen)
+E0–E4 = Energie-Achse  
+V0–V4 = Vertikal-Achse  
+H0–H4 = Horizontal-Achse  
 
-<div>
-  <strong>K‑Laut Zerlegung:</strong>
-  <div id="klautOutput" style="font-size: 1.4em; margin-top: 5px;"></div>
-</div>
+## 3. BANJÖL-PHASEN (3 Klangphasen)
+B0 = Startimpuls  
+B1 = Resonanzkern  
+B2 = Abschlussimpuls  
 
-<hr>
+## 4. K-LAUT-CODE (offizielle Struktur)
+[STIMME]-E<V>-V<V>-H<V>-B<V>
 
-<!-- ====================================== -->
-<!-- CODE 2: K‑Laut → Koreanische Silben -->
-<!-- ====================================== -->
-
-<h3>2. K‑Laut → Koreanische Buchstaben</h3>
-<input id="klautInput" type="text" placeholder="ㅎㅏㄹㄹㅗ eingeben">
-<button onclick="klautToHangul()">Umwandeln</button>
-
-<div>
-  <strong>Koreanisch:</strong>
-  <div id="hangulOutput" style="font-size: 1.6em; margin-top: 5px;"></div>
-</div>
-
-<script>
-/* ===========================
-   Deutsch → K‑Laut Zerlegung
-   =========================== */
-
-function toKlaut(t) {
-
-  // 1. Mehrbuchstaben-Regeln zuerst
-  t = t.replace(/ie/g, "I");
-  t = t.replace(/sch/g, "S");
-  t = t.replace(/ch/g, "C");
-  t = t.replace(/ng/g, "G");
-
-  // 2. Einzelbuchstaben-Mapping
-  const map = {
-    a:"ㅏ", ä:"ㅐ",
-    e:"ㅔ",
-    i:"ㅣ",
-    o:"ㅗ", ö:"ㅚ",
-    u:"ㅜ", ü:"ㅠ",
-
-    b:"ㅂ", p:"ㅍ",
-    d:"ㄷ", t:"ㅌ",
-    g:"ㄱ", k:"ㅋ",
-    h:"ㅎ",
-    m:"ㅁ",
-    n:"ㄴ",
-    l:"ㄹ",
-    r:"ㄹ",
-    s:"ㅅ",
-    z:"ㅈ",
-    f:"ㅍ",
-    v:"ㅂ",
-    w:"ㅜ",
-    j:"ㅈ",
-    y:"ㅣ",
-    ß:"ㅆ",
-
-    I:"ㅣ",
-    S:"ㅅㅎ",
-    C:"ㆆ",
-    G:"ㅇ"
-  };
-
-  let out = "";
-  for (let ch of t) out += (map[ch] || "");
-  return out;
-}
-
-
-/* ======================================
-   K‑Laut → Koreanische Hangul‑Silben
-   ====================================== */
-function composeHangul(jamos) {
-  const CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ".split('');
-  const JUNG = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ".split('');
-  const JONG = ["","ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-
-  let res = "";
-  let i = 0;
-
-  while (i < jamos.length) {
-    const cho = jamos[i++];
-    const jung = jamos[i++];
-    let jong = "";
-
-    if (i < jamos.length && JONG.includes(jamos[i])) {
-      jong = jamos[i++];
-    }
-
-    const code =
-      0xAC00 +
-      CHO.indexOf(cho) * 21 * 28 +
-      JUNG.indexOf(jung) * 28 +
-      JONG.indexOf(jong);
-
-    res += String.fromCharCode(code);
-  }
-  return res;
-}
-
-function klautToHangul() {
-  const t = document.getElementById("klautInput").value.trim();
-  const jamos = [...t];
-  document.getElementById("hangulOutput").innerText = composeHangul(jamos);
-}
-</script>
+## 5. BEISPIELE
+U-E1V4H2-B1   = weicher Vokal  
+C-E3V1H4-B0   = harter Anfang  
+BS-E1V2H1-B2  = nasaler Endlaut  
