@@ -17,7 +17,7 @@
 
   <h1>Deutsch → K‑Laut → Hangul → Deutsch</h1>
 
-  <p>Beispiel‑Kette: <code>Habe → h·a·b·e → h+a / b+e → 하베 → Habe</code></p>
+  <p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
 
   <label>Deutsches Wort eingeben:</label>
   <input id="wort" type="text" value="Habe">
@@ -29,12 +29,12 @@
   </div>
 
   <div class="block">
-    <div class="title">2. K‑Laut‑Zerlegung</div>
-    <div id="klaut"></div>
+    <div class="title">2. K‑Buchstaben (Jamos)</div>
+    <div id="kbuchstaben"></div>
   </div>
 
   <div class="block">
-    <div class="title">3. Hangul</div>
+    <div class="title">3. Hangul (Silben)</div>
     <div id="hangul"></div>
   </div>
 
@@ -44,8 +44,8 @@
   </div>
 
 <script>
-  // K‑Buchstaben → Hangul
-  const kToHangul = {
+  // deutsche Buchstaben → K‑Buchstaben (Jamos)
+  const kJamo = {
     "h": "ㅎ",
     "a": "ㅏ",
     "b": "ㅂ",
@@ -54,43 +54,44 @@
     "g": "ㄱ"
   };
 
-  // 1. Deutsche Zerlegung
+  // 1. deutsche Zerlegung
   function deutscheZerlegung(wort) {
     wort = wort.toLowerCase();
     return wort.split("").filter(ch => /[a-z]/.test(ch));
   }
 
-  // 2. K‑Laut‑Zerlegung (immer Paare)
-  function klautZerlegung(buchstaben) {
-    const paare = [];
-    for (let i = 0; i < buchstaben.length; i += 2) {
-      const c1 = buchstaben[i];
-      const c2 = buchstaben[i+1];
-      paare.push((c1 || "") + " + " + (c2 || ""));
-    }
-    return paare;
+  // 2. deutsche Buchstaben → K‑Buchstaben (Jamos)
+  function zuKJamos(buchstaben) {
+    return buchstaben.map(ch => kJamo[ch] || "?");
   }
 
-  // 3. Hangul
-  function kLauteZuHangul(paare) {
-    return paare.map(p => {
-      const [c1, c2] = p.split(" + ");
-      return (kToHangul[c1] || "") + (kToHangul[c2] || "");
-    }).join("");
+  // 3. Jamos zu Silben (sehr einfache Paarbildung: (0,1), (2,3) …)
+  function jamosZuSilben(jamos) {
+    const silben = [];
+    for (let i = 0; i < jamos.length; i += 2) {
+      const c1 = jamos[i] || "";
+      const c2 = jamos[i+1] || "";
+      silben.push(c1 + c2);
+    }
+    return silben.join("");
   }
 
   function umwandeln() {
     const wort = document.getElementById("wort").value.trim();
 
+    // 1. deutsch
     const deutsch = deutscheZerlegung(wort);
     document.getElementById("deutsch").textContent = deutsch.join(" · ");
 
-    const klaut = klautZerlegung(deutsch);
-    document.getElementById("klaut").textContent = klaut.join(" / ");
+    // 2. K‑Buchstaben (Jamos)
+    const jamos = zuKJamos(deutsch);
+    document.getElementById("kbuchstaben").textContent = jamos.join(" · ");
 
-    const hangul = kLauteZuHangul(klaut);
+    // 3. Silben
+    const hangul = jamosZuSilben(jamos);
     document.getElementById("hangul").textContent = hangul;
 
+    // 4. Rückführung
     document.getElementById("zurueck").textContent = wort;
   }
 
