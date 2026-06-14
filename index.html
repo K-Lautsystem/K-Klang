@@ -1,89 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Deutsch → K‑Laut → Hangul</title>
+  <title>Deutsch → K‑Laut → Hangul → Deutsch</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    input { padding: 8px; width: 250px; }
-    button { padding: 8px 12px; margin-left: 10px; }
-    #output { margin-top: 20px; font-size: 24px; }
+    body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; line-height: 1.6; }
+    h1 { font-size: 1.6rem; }
+    input { width: 100%; padding: 0.5rem; font-size: 1rem; }
+    button { margin-top: 0.8rem; padding: 0.5rem 1rem; font-size: 1rem; }
+    .block { margin-top: 1.2rem; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; }
+    .title { font-weight: bold; margin-bottom: 0.3rem; }
+    code { font-family: Consolas, monospace; }
   </style>
 </head>
 <body>
 
-<div>
-  <h3>Deutsch → K‑Laut → Hangul</h3>
-  <input id="inputText" type="text" placeholder="Wort eingeben">
-  <button onclick="toK()">Umwandeln</button>
-  <div id="output"></div>
-</div>
+  <h1>Deutsch → K‑Laut → Hangul → Deutsch</h1>
+
+  <p>Beispiel‑Kette: <code>Habe → h·a·b·e → h+a / b+e → 하베 → Habe</code></p>
+
+  <label>Deutsches Wort eingeben:</label>
+  <input id="wort" type="text" value="Habe">
+  <button onclick="umwandeln()">Umwandeln</button>
+
+  <div class="block">
+    <div class="title">1. Deutsche Zerlegung</div>
+    <div id="deutsch"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">2. K‑Laut‑Zerlegung</div>
+    <div id="klaut"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">3. K‑Wort in Hangul</div>
+    <div id="hangul"></div>
+  </div>
+
+  <div class="block">
+    <div class="title">4. Rückführung zu Deutsch</div>
+    <div id="zurueck"></div>
+  </div>
 
 <script>
-function composeHangul(jamos) {
-  const CHO = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ".split('');
-  const JUNG = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ".split('');
-  const JONG = ["","ㄱ","ㄲ","ㄳ","ㄴ","ㄵ","ㄶ","ㄷ","ㄹ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅁ","ㅂ","ㅄ","ㅅ","ㅆ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-
-  let result = "";
-  for (let i = 0; i < jamos.length; ) {
-    const cho = jamos[i++];
-    const jung = jamos[i++];
-    let jong = "";
-
-    if (i < jamos.length) {
-      const next = jamos[i];
-      if (JONG.includes(next)) {
-        jong = next;
-        i++;
-      }
-    }
-
-    const syllable = 0xAC00
-      + CHO.indexOf(cho) * 21 * 28
-      + JUNG.indexOf(jung) * 28
-      + JONG.indexOf(jong);
-
-    result += String.fromCharCode(syllable);
-  }
-  return result;
-}
-
-function toK() {
-  const t = document.getElementById("inputText").value.toLowerCase();
-
-  const map = {
-    a:"ㅏ", ä:"ㅐ",
-    e:"ㅔ",
-    i:"ㅣ",
-    o:"ㅗ", ö:"ㅚ",
-    u:"ㅜ", ü:"ㅠ",
-
-    b:"ㅂ", p:"ㅍ",
-    d:"ㄷ", t:"ㅌ",
-    g:"ㄱ", k:"ㅋ",
-    h:"ㅎ",
-    m:"ㅁ",
-    n:"ㄴ",
-    l:"ㄹ",
-    r:"ㄹ",
-    s:"ㅅ",
-    z:"ㅈ",
-    f:"ㅍ",
-    v:"ㅂ",
-    w:"ㅜ",
-    j:"ㅈ",
-    y:"ㅣ",
-    ß:"ㅆ"
+  // K‑Buchstaben → Hangul
+  const kToHangul = {
+    "h": "ㅎ",
+    "a": "ㅏ",
+    "b": "ㅂ",
+    "e": "ㅔ"
   };
 
-  let jamos = [];
-  for (let ch of t) jamos.push(map[ch] || ch);
+  // Schritt 1: Deutsche Zerlegung
+  function deutscheZerlegung(wort) {
+    wort = wort.toLowerCase();
+    return wort.split("").filter(ch => /[a-z]/.test(ch));
+  }
 
-  const hangul = composeHangul(jamos);
+  // Schritt 2: K‑Laut‑Zerlegung (immer Paare: h+a, b+e)
+  function klautZerlegung(buchstaben) {
+    const paare = [];
+    for (let i = 0; i < buchstaben.length; i += 2) {
+      const c1 = buchstaben[i];
+      const c2 = buchstaben[i+1];
+      paare.push((c1 || "") + " + " + (c2 || ""));
+    }
+    return paare;
+  }
 
-  document.getElementById("output").innerText = hangul;
-}
+  // Schritt 3: K‑Laute → Hangul
+  function kLauteZuHangul(paare) {
+    return paare.map(p => {
+      const [c1, c2] = p.split(" + ");
+      return (kToHangul[c1] || "") + (kToHangul[c2] || "");
+    }).join("");
+  }
+
+  function umwandeln() {
+    const wort = document.getElementById("wort").value.trim();
+
+    // 1. Deutsche Zerlegung
+    const deutsch = deutscheZerlegung(wort);
+    document.getElementById("deutsch").textContent = deutsch.join(" · ");
+
+    // 2. K‑Laut‑Zerlegung
+    const klaut = klautZerlegung(deutsch);
+    document.getElementById("klaut").textContent = klaut.join(" / ");
+
+    // 3. Hangul
+    const hangul = kLauteZuHangul(klaut);
+    document.getElementById("hangul").textContent = hangul;
+
+    // 4. Rückführung
+    document.getElementById("zurueck").textContent = wort;
+  }
+
+  umwandeln();
 </script>
 
 </body>
