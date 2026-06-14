@@ -45,6 +45,25 @@
     <div id="zurueck"></div>
   </div>
 
+<h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
+<input id="kwort" type="text">
+<button onclick="kwortUmwandeln()">Umwandeln</button>
+
+<div class="block">
+  <div class="title">K‑Buchstaben (Jamos)</div>
+  <div id="kjamos"></div>
+</div>
+
+<div class="block">
+  <div class="title">Deutsche Buchstaben</div>
+  <div id="deutschAusK"></div>
+</div>
+
+<div class="block">
+  <div class="title">Deutsches Wort</div>
+  <div id="wortAusK"></div>
+</div>
+
 <script>
   // deutsche Buchstaben → K‑Buchstaben (Jamos)
   const kJamo = {
