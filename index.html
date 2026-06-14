@@ -19,148 +19,151 @@
 
   <h1>Deutsch → K‑Laut → Hangul → Deutsch</h1>
 
-  <p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
+<p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
 
-  <label>Deutsches Wort eingeben:</label>
-  <input id="wort" type="text" value="Habe">
-  <button onclick="umwandeln()">Umwandeln</button>
+<label>Deutsches Wort eingeben:</label>
+<input id="wort" type="text" value="Habe">
+<button onclick="umwandeln()">Umwandeln</button>
 
-  <div class="block">
-    <div class="title">1. Deutsche Zerlegung</div>
-    <div id="deutsch"></div>
-  </div>
+<div class="block">
+  <div class="title">1. Deutsche Zerlegung</div>
+  <div id="deutsch"></div>
+</div>
 
-  <div class="block">
-    <div class="title">2. K‑Buchstaben (Jamos)</div>
-    <div id="kbuchstaben"></div>
-  </div>
+<div class="block">
+  <div class="title">2. K‑Buchstaben (Jamos)</div>
+  <div id="kbuchstaben"></div>
+</div>
 
-  <div class="block">
-    <div class="title">3. Hangul (Silben)</div>
-    <div id="hangul"></div>
-  </div>
+<div class="block">
+  <div class="title">3. Hangul (Silben)</div>
+  <div id="hangul"></div>
+</div>
 
-  <div class="block">
-    <div class="title">4. Rückführung</div>
-    <div id="zurueck"></div>
-  </div>
+<div class="block">
+  <div class="title">4. Rückführung</div>
+  <div id="zurueck"></div>
+</div>
 
-  <h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
-  <input id="kwort" type="text">
-  <button onclick="kwortUmwandeln()">Umwandeln</button>
+<h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
+<input id="kwort" type="text">
+<button onclick="kwortUmwandeln()">Umwandeln</button>
 
-  <div class="block">
-    <div class="title">K‑Buchstaben (Jamos)</div>
-    <div id="kjamos"></div>
-  </div>
+<div class="block">
+  <div class="title">K‑Buchstaben (Jamos)</div>
+  <div id="kjamos"></div>
+</div>
 
-  <div class="block">
-    <div class="title">Hangul</div>
-    <div id="deutschAusK"></div>
-  </div>
+<div class="block">
+  <div class="title">Hangul</div>
+  <div id="deutschAusK"></div>
+</div>
 
-  <div class="block">
-    <div class="title">Deutsches Wort</div>
-    <div id="wortAusK"></div>
-  </div>
+<div class="block">
+  <div class="title">Deutsches Wort</div>
+  <div id="wortAusK"></div>
+</div>
 
 <script>
-  // deutsche Buchstaben → K‑Buchstaben (Jamos)
-  const kJamo = {
-    "h": "ㅎ",
-    "a": "ㅏ",
-    "b": "ㅂ",
-    "e": "ㅔ",
-    "t": "ㅌ",
-    "g": "ㄱ"
+const kJamo = {
+  "h": "ㅎ",
+  "a": "ㅏ",
+  "b": "ㅂ",
+  "e": "ㅔ",
+  "t": "ㅌ",
+  "g": "ㄱ"
+};
+
+function deutscheZerlegung(wort) {
+  wort = wort.toLowerCase();
+  return wort.split("").filter(ch => /[a-z]/.test(ch));
+}
+
+function zuKJamos(buchstaben) {
+  return buchstaben.map(ch => kJamo[ch] || "?");
+}
+
+function jamosZuSilben(jamos) {
+  const silben = [];
+  for (let i = 0; i < jamos.length; i += 2) {
+    const c1 = jamos[i] || "";
+    const c2 = jamos[i+1] || "";
+    silben.push(c1 + c2);
+  }
+  return silben.join("");
+}
+
+function umwandeln() {
+  const wort = document.getElementById("wort").value.trim();
+
+  const deutsch = deutscheZerlegung(wort);
+  document.getElementById("deutsch").textContent = deutsch.join(" · ");
+
+  const jamos = zuKJamos(deutsch);
+  document.getElementById("kbuchstaben").textContent = jamos.join(" · ");
+
+  const hangul = jamosZuSilben(jamos);
+  document.getElementById("hangul").textContent = hangul;
+
+  document.getElementById("zurueck").textContent = wort;
+}
+
+umwandeln();
+
+// Hangul-Silbenbau (하베)
+function jamosZuHangul(jamos) {
+  const CHOSEONG = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+  const JUNGSEONG = ["ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ","ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ"];
+
+  let result = "";
+  for (let i = 0; i < jamos.length; i += 2) {
+    const c = CHOSEONG.indexOf(jamos[i]);
+    const v = JUNGSEONG.indexOf(jamos[i+1]);
+    const code = 0xAC00 + c * 588 + v * 28;
+    result += String.fromCharCode(code);
+  }
+  return result;
+}
+
+// Hangul → Deutsch
+function hangulZuDeutsch(hangul) {
+  const reverse = {
+    "하": "ha",
+    "베": "be"
   };
-
-  // 1. deutsche Zerlegung
-  function deutscheZerlegung(wort) {
-    wort = wort.toLowerCase();
-    return wort.split("").filter(ch => /[a-z]/.test(ch));
+  let result = "";
+  for (let char of hangul) {
+    result += reverse[char] || "?";
   }
+  return result;
+}
 
-  // 2. deutsche Buchstaben → K‑Buchstaben (Jamos)
-  function zuKJamos(buchstaben) {
-    return buchstaben.map(ch => kJamo[ch] || "?");
-  }
+function kwortUmwandeln() {
+  const kwort = document.getElementById("kwort").value.trim();
 
-  // 3. Jamos zu Silben (einfach)
-  function jamosZuSilben(jamos) {
-    const silben = [];
-    for (let i = 0; i < jamos.length; i += 2) {
-      const c1 = jamos[i] || "";
-      const c2 = jamos[i+1] || "";
-      silben.push(c1 + c2);
-    }
-    return silben.join("");
-  }
+  const jamos = kwort.split("");
+  document.getElementById("kjamos").textContent = jamos.join(" · ");
 
-  function umwandeln() {
-    const wort = document.getElementById("wort").value.trim();
+  const hangul = jamosZuHangul(jamos);
+  document.getElementById("deutschAusK").textContent = hangul;
 
-    // 1. deutsch
-    const deutsch = deutscheZerlegung(wort);
-    document.getElementById("deutsch").textContent = deutsch.join(" · ");
-
-    // 2. K‑Buchstaben (Jamos)
-    const jamos = zuKJamos(deutsch);
-    document.getElementById("kbuchstaben").textContent = jamos.join(" · ");
-
-    // 3. Silben
-    const hangul = jamosZuSilben(jamos);
-    document.getElementById("hangul").textContent = hangul;
-
-    // 4. Rückführung
-    document.getElementById("zurueck").textContent = wort;
-  }
-
-  umwandeln();
-
-  // ⭐ Hangul-Silbenbau (하베)
-  function jamosZuHangul(jamos) {
-    const CHOSEONG = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-    const JUNGSEONG = ["ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ","ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ"];
-
-    let result = "";
-    for (let i = 0; i < jamos.length; i += 2) {
-      const c = CHOSEONG.indexOf(jamos[i]);
-      const v = JUNGSEONG.indexOf(jamos[i+1]);
-      const code = 0xAC00 + c * 588 + v * 28;
-      result += String.fromCharCode(code);
-    }
-    return result;
-  }
-
-  function kwortUmwandeln() {
-    const kwort = document.getElementById("kwort").value.trim();
-
-    // 1. Jamos anzeigen
-    const jamos = kwort.split("");
-    document.getElementById("kjamos").textContent = jamos.join(" · ");
-
-    // 2. Hangul-Silben bauen (하베)
-    const hangul = jamosZuHangul(jamos);
-    document.getElementById("deutschAusK").textContent = hangul;
-
-    // 3. Hangul → deutsches Wort (optional)
-    document.getElementById("wortAusK").textContent = hangul;
-  }
+  const deutsch = hangulZuDeutsch(hangul);
+  document.getElementById("wortAusK").textContent = deutsch;
+}
 </script>
 
-  <div class="block">
-    <div class="title">Deutsche Buchstaben → K‑Buchstaben → Hangul‑Jamos</div>
-    <table>
-      <tr><th>Deutsch</th><th>K‑Buchstabe</th><th>Hangul‑Jamo</th></tr>
-      <tr><td>h</td><td>h</td><td>ㅎ</td></tr>
-      <tr><td>a</td><td>a</td><td>ㅏ</td></tr>
-      <tr><td>b</td><td>b</td><td>ㅂ</td></tr>
-      <tr><td>e</td><td>e</td><td>ㅔ</td></tr>
-      <tr><td>t</td><td>t</td><td>ㅌ</td></tr>
-      <tr><td>g</td><td>g</td><td>ㄱ</td></tr>
-    </table>
-  </div>
+<div class="block">
+  <div class="title">Deutsche Buchstaben → K‑Buchstaben → Hangul‑Jamos</div>
+  <table>
+    <tr><th>Deutsch</th><th>K‑Buchstabe</th><th>Hangul‑Jamo</th></tr>
+    <tr><td>h</td><td>h</td><td>ㅎ</td></tr>
+    <tr><td>a</td><td>a</td><td>ㅏ</td></tr>
+    <tr><td>b</td><td>b</td><td>ㅂ</td></tr>
+    <tr><td>e</td><td>e</td><td>ㅔ</td></tr>
+    <tr><td>t</td><td>t</td><td>ㅌ</td></tr>
+    <tr><td>g</td><td>g</td><td>ㄱ</td></tr>
+  </table>
+</div>
 
 </body>
 </html>
