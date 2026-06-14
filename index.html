@@ -34,12 +34,12 @@
   </div>
 
   <div class="block">
-    <div class="title">3. K‑Wort in Hangul</div>
+    <div class="title">3. Hangul</div>
     <div id="hangul"></div>
   </div>
 
   <div class="block">
-    <div class="title">4. Rückführung zu Deutsch</div>
+    <div class="title">4. Rückführung</div>
     <div id="zurueck"></div>
   </div>
 
@@ -49,16 +49,18 @@
     "h": "ㅎ",
     "a": "ㅏ",
     "b": "ㅂ",
-    "e": "ㅔ"
+    "e": "ㅔ",
+    "t": "ㅌ",
+    "g": "ㄱ"
   };
 
-  // Schritt 1: Deutsche Zerlegung
+  // 1. Deutsche Zerlegung
   function deutscheZerlegung(wort) {
     wort = wort.toLowerCase();
     return wort.split("").filter(ch => /[a-z]/.test(ch));
   }
 
-  // Schritt 2: K‑Laut‑Zerlegung (immer Paare: h+a, b+e)
+  // 2. K‑Laut‑Zerlegung (immer Paare)
   function klautZerlegung(buchstaben) {
     const paare = [];
     for (let i = 0; i < buchstaben.length; i += 2) {
@@ -69,7 +71,7 @@
     return paare;
   }
 
-  // Schritt 3: K‑Laute → Hangul
+  // 3. Hangul
   function kLauteZuHangul(paare) {
     return paare.map(p => {
       const [c1, c2] = p.split(" + ");
@@ -80,19 +82,15 @@
   function umwandeln() {
     const wort = document.getElementById("wort").value.trim();
 
-    // 1. Deutsche Zerlegung
     const deutsch = deutscheZerlegung(wort);
     document.getElementById("deutsch").textContent = deutsch.join(" · ");
 
-    // 2. K‑Laut‑Zerlegung
     const klaut = klautZerlegung(deutsch);
     document.getElementById("klaut").textContent = klaut.join(" / ");
 
-    // 3. Hangul
     const hangul = kLauteZuHangul(klaut);
     document.getElementById("hangul").textContent = hangul;
 
-    // 4. Rückführung
     document.getElementById("zurueck").textContent = wort;
   }
 
