@@ -135,12 +135,38 @@
 
 <hr>
 
-<!-- ⭐ FUNKTIONIERENDES JAVASCRIPT -->
 <script>
 const mapDeutsch = {
+  // Deutsch
   "h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ","t":"ㅌ","g":"ㄱ",
-  "o":"ㅗ","u":"ㅜ","i":"ㅣ","ä":"ㅐ","ö":"ㅚ","ü":"ㅟ"
+  "o":"ㅗ","u":"ㅜ","i":"ㅣ","ä":"ㅐ","ö":"ㅚ","ü":"ㅟ",
+
+  // Französisch
+  "n":"ㄴ",
+  "r":"ㄹ",
+  "m":"ㅁ",
+  "f":"ㅍ",
+  "s":"ㅅ",
+  "z":"ㅈ",
+  "j":"ㅈ",     // französisches j
+  "c":"ㅈ",     // z.B. bonjour
+  "p":"ㅂ",
+  "l":"ㄹ",
+
+  // französische Kombinationen
+  "jh":"ㅈ",    // ⭐ korrekt für bon-jhoor
+  "ch":"ㅈ",
+  "sh":"ㅅ",
+  "oo":"ㅜ",
+  "ou":"ㅜ",
+
+  // Nasale
+  "on":"옹",
+  "an":"앙",
+  "en":"엉",
+  "in":"잉"
 };
+
 
 function umwandeln(){
   let w = document.getElementById("wort").value.toLowerCase();
