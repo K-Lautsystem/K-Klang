@@ -16,11 +16,9 @@
   </style>
 </head>
 <body>
-
 <h1>K-Klang – Universelles Klangsystem</h1>
 <h2>Deutsch → K‑Laut → Hangul → Deutsch</h2>
 
-<!-- UMWANDELN-BLOCK GANZ OBEN -->
 <p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
 
 <label>Deutsches Wort eingeben:</label>
@@ -66,7 +64,6 @@
   <div id="wortAusK"></div>
 </div>
 
-<!-- TESTBLOCK JETZT UNTEN -->
 <h2>K‑Lautsystem – Testblock</h2>
 
 <h3>1. Baby‑Schrei (Testlaut)</h3>
@@ -138,23 +135,42 @@
 
 <hr>
 
+<!-- ⭐ FUNKTIONIERENDES JAVASCRIPT -->
 <script>
-  /* dein JavaScript bleibt unverändert */
+const mapDeutsch = {
+  "h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ","t":"ㅌ","g":"ㄱ",
+  "o":"ㅗ","u":"ㅜ","i":"ㅣ","ä":"ㅐ","ö":"ㅚ","ü":"ㅟ"
+};
+
+function umwandeln(){
+  let w = document.getElementById("wort").value.toLowerCase();
+
+  // 1. Zerlegung
+  document.getElementById("deutsch").innerText = w.split("").join(" · ");
+
+  // 2. K‑Buchstaben
+  let k = w.split("").map(c => mapDeutsch[c] || "?");
+  document.getElementById("kbuchstaben").innerText = k.join(" · ");
+
+  // 3. Hangul (einfach: Jamos hintereinander)
+  document.getElementById("hangul").innerText = k.join("");
+
+  // 4. Rückführung
+  let rück = k.map(j => Object.keys(mapDeutsch).find(key => mapDeutsch[key]===j) || "?");
+  document.getElementById("zurueck").innerText = rück.join("");
+}
+
+function kwortUmwandeln(){
+  let k = document.getElementById("kwort").value.split("");
+
+  document.getElementById("kjamos").innerText = k.join(" · ");
+
+  let deutsch = k.map(j => Object.keys(mapDeutsch).find(key => mapDeutsch[key]===j) || "?");
+  document.getElementById("wortAusK").innerText = deutsch.join("");
+
+  document.getElementById("deutschAusK").innerText = k.join("");
+}
 </script>
-
-<div class="block">
-  <div class="title">Deutsche Buchstaben → K‑Buchstaben → Hangul‑Jamos</div>
-  <table>
-    <tr><th>Deutsch</th><th>K‑Buchstabe</th><th>Hangul‑Jamo</th></tr>
-    <tr><td>h</td><td>h</td><td>ㅎ</td></tr>
-    <tr><td>a</td><td>a</td><td>ㅏ</td></tr>
-    <tr><td>b</td><td>b</td><td>ㅂ</td></tr>
-    <tr><td>e</td><td>e</td><td>ㅔ</td></tr>
-    <tr><td>t</td><td>t</td><td>ㅌ</td></tr>
-    <tr><td>g</td><td>g</td><td>ㄱ</td></tr>
-  </table>
-</div>
-
 </body>
 </html>
 
