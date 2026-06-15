@@ -20,6 +20,53 @@
 <h1>K-Klang – Universelles Klangsystem</h1>
 <h2>Deutsch → K‑Laut → Hangul → Deutsch</h2>
 
+<!-- UMWANDELN-BLOCK GANZ OBEN -->
+<p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
+
+<label>Deutsches Wort eingeben:</label>
+<input id="wort" type="text" value="Habe">
+<button onclick="umwandeln()">Umwandeln</button>
+
+<div class="block">
+  <div class="title">1. Deutsche Zerlegung</div>
+  <div id="deutsch"></div>
+</div>
+
+<div class="block">
+  <div class="title">2. K‑Buchstaben (Jamos)</div>
+  <div id="kbuchstaben"></div>
+</div>
+
+<div class="block">
+  <div class="title">3. Hangul (Silben)</div>
+  <div id="hangul"></div>
+</div>
+
+<div class="block">
+  <div class="title">4. Rückführung</div>
+  <div id="zurueck"></div>
+</div>
+
+<h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
+<input id="kwort" type="text">
+<button onclick="kwortUmwandeln()">Umwandeln</button>
+
+<div class="block">
+  <div class="title">K‑Buchstaben (Jamos)</div>
+  <div id="kjamos"></div>
+</div>
+
+<div class="block">
+  <div class="title">Hangul</div>
+  <div id="deutschAusK"></div>
+</div>
+
+<div class="block">
+  <div class="title">Deutsches Wort</div>
+  <div id="wortAusK"></div>
+</div>
+
+<!-- TESTBLOCK JETZT UNTEN -->
 <h2>K‑Lautsystem – Testblock</h2>
 
 <h3>1. Baby‑Schrei (Testlaut)</h3>
@@ -90,51 +137,6 @@
 <p><strong>Steiermark – Griaß enk</strong><br>그리아스 엥크</p>
 
 <hr>
-
-<p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
-
-<label>Deutsches Wort eingeben:</label>
-<input id="wort" type="text" value="Habe">
-<button onclick="umwandeln()">Umwandeln</button>
-
-<div class="block">
-  <div class="title">1. Deutsche Zerlegung</div>
-  <div id="deutsch"></div>
-</div>
-
-<div class="block">
-  <div class="title">2. K‑Buchstaben (Jamos)</div>
-  <div id="kbuchstaben"></div>
-</div>
-
-<div class="block">
-  <div class="title">3. Hangul (Silben)</div>
-  <div id="hangul"></div>
-</div>
-
-<div class="block">
-  <div class="title">4. Rückführung</div>
-  <div id="zurueck"></div>
-</div>
-
-<h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
-<input id="kwort" type="text">
-<button onclick="kwortUmwandeln()">Umwandeln</button>
-
-<div class="block">
-  <div class="title">K‑Buchstaben (Jamos)</div>
-  <div id="kjamos"></div>
-</div>
-
-<div class="block">
-  <div class="title">Hangul</div>
-  <div id="deutschAusK"></div>
-</div>
-
-<div class="block">
-  <div class="title">Deutsches Wort</div>
-  <div id="wortAusK"></div>
-</div>
 
 <script>
   /* dein JavaScript bleibt unverändert */
