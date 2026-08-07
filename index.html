@@ -55,13 +55,6 @@ Kaffee → 카페<br>
 Schule → 슐레<br>
 Freund → 프로인트
 </p>
-
-
-
-
-
-
-  
   
 <label>Deutsches Wort eingeben:</label>
 <input id="wort" type="text" value="Habe">
@@ -108,12 +101,34 @@ Freund → 프로인트
 
 <hr>
 
-<script>
-// ⭐ Deutsch + Französisch + jh‑Mapping
+// 1. K-Laut Wörterbuch
+const kVokabel = {
+  "Mul": {
+    "id": 102,
+    "k_laut": "ㅁㅜㄹ",
+    "sildam": "Mur",
+    "deutsch": "Wasser",
+    "hanmun": "水",
+    "hanmun_reading": "Mul-su"
+  }
+};
+
+// 2. Laut-Mapping Deutsch → K-Laut
 const mapDeutsch = {
+
   // Deutsch
-  "h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ","t":"ㅌ","g":"ㄱ",
-  "o":"ㅗ","u":"ㅜ","i":"ㅣ","ä":"ㅐ","ö":"ㅚ","ü":"ㅟ",
+  "h":"ㅎ",
+  "a":"ㅏ",
+  "b":"ㅂ",
+  "e":"ㅔ",
+  "t":"ㅌ",
+  "g":"ㄱ",
+  "o":"ㅗ",
+  "u":"ㅜ",
+  "i":"ㅣ",
+  "ä":"ㅐ",
+  "ö":"ㅚ",
+  "ü":"ㅟ",
 
   // Französisch
   "n":"ㄴ",
@@ -147,7 +162,7 @@ function umwandeln(){
   // 1. Zerlegung
   document.getElementById("deutsch").innerText = w.split("").join(" · ");
 
-  // 2. K‑Buchstaben
+  // 2. K-Buchstaben
   let k = w.split("").map(c => mapDeutsch[c] || "?");
   document.getElementById("kbuchstaben").innerText = k.join(" · ");
 
@@ -169,7 +184,24 @@ function kwortUmwandeln(){
 
   document.getElementById("deutschAusK").innerText = k.join("");
 }
-</script>
+
+
+// 3. K-Laut Wörterbuch Suche
+function sucheKWort(){
+  let wort = document.getElementById("kwort").value;
+
+  if(kVokabel[wort]){
+    let daten = kVokabel[wort];
+
+    document.getElementById("ergebnis").innerText =
+      "ID: " + daten.id +
+      "\nK-Laut: " + daten.k_laut +
+      "\nSildam: " + daten.sildam +
+      "\nDeutsch: " + daten.deutsch +
+      "\nHanmun: " + daten.hanmun +
+      "\nLesung: " + daten.hanmun_reading;
+  }
+}
 <hr>
 
 <h2>K‑Lautsystem – Testblock</h2>
@@ -240,6 +272,10 @@ function kwortUmwandeln(){
 <p><strong>Schwaben – Griaß di</strong><br>그리아쓰 디</p>
 <p><strong>Platt – Moin moin</strong><br>모인 모인</p>
 <p><strong>Steiermark – Griaß enk</strong><br>그리아스 엥크</p>  
+
+  <input id="kwort" value="Mul">
+<button onclick="sucheKWort()">K-Wort suchen</button>
+<pre id="ergebnis"></pre>
 </body>
 </html>
 
