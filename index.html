@@ -55,18 +55,21 @@ pre {
 <h3>Rückführung</h3>
 <pre id="zurueck"></pre>
 
-
 <hr>
 
 
 <h2>K-Wort Wörterbuch</h2>
 
-<input id="kwort" value="Mul">
-
+<input id="kwort" placeholder="Wort eingeben">
 <button onclick="sucheKWort()">K-Wort suchen</button>
 
-<pre id="ergebnis"></pre>
+<div style="margin-top:15px;">
+  <b>Beispiele:</b>
+  <button onclick="setzeBeispiel('habe')">habe</button>
+  <button onclick="setzeBeispiel('Mul')">Mul</button>
+</div>
 
+<pre id="ergebnis"></pre>
 
 
 <script>
@@ -213,6 +216,14 @@ function sucheKWort(){
 
 }
 
+// Beispielwort einsetzen
+function setzeBeispiel(wort){
+
+    document.getElementById("kwort").value = wort;
+
+    sucheKWort();
+
+}
 
 // Test beim Laden
 window.onload = function(){
