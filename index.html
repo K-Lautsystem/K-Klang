@@ -1,282 +1,234 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Deutsch → K‑Laut → Hangul → Deutsch</title>
-  <style>
-    body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; line-height: 1.6; }
-    h1 { font-size: 1.6rem; }
-    input { width: 100%; padding: 0.5rem; font-size: 1rem; }
-    button { margin-top: 0.8rem; padding: 0.5rem 1rem; font-size: 1rem; }
-    .block { margin-top: 1.2rem; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; }
-    .title { font-weight: bold; margin-bottom: 0.3rem; }
-    code { font-family: Consolas, monospace; }
-    table { border-collapse: collapse; width: 100%; margin-top: 0.5rem; }
-    th, td { border: 1px solid #ccc; padding: 0.3rem 0.5rem; text-align: center; }
-  </style>
+<meta charset="UTF-8">
+<title>K-Laut System</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 30px;
+}
+
+input {
+    font-size: 18px;
+    padding: 5px;
+}
+
+button {
+    font-size: 18px;
+    padding: 5px 15px;
+    margin: 5px;
+}
+
+pre {
+    background: #eee;
+    padding: 15px;
+    font-size: 18px;
+}
+</style>
+
 </head>
+
 <body>
-<h1>K-Klang – Universelles Klangsystem</h1>
-<h2>Deutsch → K‑Laut → Hangul → Deutsch</h2>
 
-<p>Beispiel‑Kette: <code>Habe → h·a·b·e → ㅎ·ㅏ·ㅂ·ㅔ → 하베 → Habe</code></p>
+<h1>K-Laut System</h1>
 
-<p>
-Deutsche Wörter werden mit Hangul-Lauten geschrieben, um Aussprache weltweit einfach und verständlich darzustellen.
-</p>
-<p>
-<strong>Grundregel:</strong> Deutsche Wörter werden nach ihrem Klang mit Hangul-Lauten dargestellt.
-</p>
-  <p>
-Deutsche Wörter werden nach ihrem Klang mit Hangul-Lauten dargestellt.
-K-Laut verbindet Sprache, Klang und Schrift durch ein universelles phonetisches System.
-</p>
 
-<h3>20 Beispielwörter zum Testen</h3>
-<p>
-Haus → 하우스<br>
-Mutter → 무터<br>
-Vater → 파터<br>
-Wasser → 바서<br>
-Sonne → 존네<br>
-Mond → 몬트<br>
-Auto → 아우토<br>
-Computer → 컴퓨터<br>
-Telefon → 텔레폰<br>
-Musik → 무지크<br>
-Radio → 라디오<br>
-Hotel → 호텔<br>
-Universität → 우니베어지테트<br>
-Doktor → 독토어<br>
-Kamera → 카메라<br>
-Banane → 바나네<br>
-Pizza → 피차<br>
-Kaffee → 카페<br>
-Schule → 슐레<br>
-Freund → 프로인트
-</p>
-  
-<label>Deutsches Wort eingeben:</label>
-<input id="wort" type="text" value="Habe">
+<h2>Deutsch → K-Laut</h2>
+
+<input id="wort" value="Mul">
+
 <button onclick="umwandeln()">Umwandeln</button>
 
-<div class="block">
-  <div class="title">1. Deutsche Zerlegung</div>
-  <div id="deutsch"></div>
-</div>
+<h3>Deutsch Zerlegung</h3>
+<pre id="deutsch"></pre>
 
-<div class="block">
-  <div class="title">2. K‑Buchstaben (Jamos)</div>
-  <div id="kbuchstaben"></div>
-</div>
+<h3>K-Buchstaben</h3>
+<pre id="kbuchstaben"></pre>
 
-<div class="block">
-  <div class="title">3. Hangul (Silben)</div>
-  <div id="hangul"></div>
-</div>
+<h3>Hangul</h3>
+<pre id="hangul"></pre>
 
-<div class="block">
-  <div class="title">4. Rückführung</div>
-  <div id="zurueck"></div>
-</div>
+<h3>Rückführung</h3>
+<pre id="zurueck"></pre>
 
-<h2>K‑Wort eingeben (z. B. ㅎㅏㅂㅔ)</h2>
-<input id="kwort" type="text">
-<button onclick="kwortUmwandeln()">Umwandeln</button>
 
-<div class="block">
-  <div class="title">K‑Buchstaben (Jamos)</div>
-  <div id="kjamos"></div>
-</div>
-
-<div class="block">
-  <div class="title">Hangul</div>
-  <div id="deutschAusK"></div>
-</div>
-
-<div class="block">
-  <div class="title">Deutsches Wort</div>
-  <div id="wortAusK"></div>
-</div>
 
 <hr>
 
-// 1. K-Laut Wörterbuch
-const kVokabel = {
-  "Mul": {
-    "id": 102,
-    "k_laut": "ㅁㅜㄹ",
-    "sildam": "Mur",
-    "deutsch": "Wasser",
-    "hanmun": "水",
-    "hanmun_reading": "Mul-su"
-  }
-};
 
-// 2. Laut-Mapping Deutsch → K-Laut
-const mapDeutsch = {
-
-  // Deutsch
-  "h":"ㅎ",
-  "a":"ㅏ",
-  "b":"ㅂ",
-  "e":"ㅔ",
-  "t":"ㅌ",
-  "g":"ㄱ",
-  "o":"ㅗ",
-  "u":"ㅜ",
-  "i":"ㅣ",
-  "ä":"ㅐ",
-  "ö":"ㅚ",
-  "ü":"ㅟ",
-
-  // Französisch
-  "n":"ㄴ",
-  "r":"ㄹ",
-  "m":"ㅁ",
-  "f":"ㅍ",
-  "s":"ㅅ",
-  "z":"ㅈ",
-  "j":"ㅈ",
-  "c":"ㅈ",
-  "p":"ㅂ",
-  "l":"ㄹ",
-
-  // Kombinationen
-  "jh":"ㅈ",
-  "ch":"ㅈ",
-  "sh":"ㅅ",
-  "oo":"ㅜ",
-  "ou":"ㅜ",
-
-  // Nasale
-  "on":"옹",
-  "an":"앙",
-  "en":"엉",
-  "in":"잉"
-};
-
-function umwandeln(){
-  let w = document.getElementById("wort").value.toLowerCase();
-
-  // 1. Zerlegung
-  document.getElementById("deutsch").innerText = w.split("").join(" · ");
-
-  // 2. K-Buchstaben
-  let k = w.split("").map(c => mapDeutsch[c] || "?");
-  document.getElementById("kbuchstaben").innerText = k.join(" · ");
-
-  // 3. Hangul
-  document.getElementById("hangul").innerText = k.join("");
-
-  // 4. Rückführung
-  let rück = k.map(j => Object.keys(mapDeutsch).find(key => mapDeutsch[key]===j) || "?");
-  document.getElementById("zurueck").innerText = rück.join("");
-}
-
-function kwortUmwandeln(){
-  let k = document.getElementById("kwort").value.split("");
-
-  document.getElementById("kjamos").innerText = k.join(" · ");
-
-  let deutsch = k.map(j => Object.keys(mapDeutsch).find(key => mapDeutsch[key]===j) || "?");
-  document.getElementById("wortAusK").innerText = deutsch.join("");
-
-  document.getElementById("deutschAusK").innerText = k.join("");
-}
-
-
-// 3. K-Laut Wörterbuch Suche
-function sucheKWort(){
-  let wort = document.getElementById("kwort").value;
-
-  if(kVokabel[wort]){
-    let daten = kVokabel[wort];
-
-    document.getElementById("ergebnis").innerText =
-      "ID: " + daten.id +
-      "\nK-Laut: " + daten.k_laut +
-      "\nSildam: " + daten.sildam +
-      "\nDeutsch: " + daten.deutsch +
-      "\nHanmun: " + daten.hanmun +
-      "\nLesung: " + daten.hanmun_reading;
-  }
-}
-
-  <hr>
-
-<h2>K‑Lautsystem – Testblock</h2>
-
-<h3>1. Baby‑Schrei (Testlaut)</h3>
-<p>
-  <strong>h‑U‑bbb‑ang</strong><br>
-  h = Atemkraft ohne Laut, U = Laut, bbb = viele bilabiale Druck‑Konsonanten, ang = Nasal-Ausgang.<br>
-  K‑Laut‑Zerlegung: ㅎ · ㅜ · ㅂㅂㅂ · ㅇ<br>
-  Test‑Darstellung: 후ㅂㅂㅂㅇ
-</p>
-
-<hr>
-
-<h3>2. Konsonanten (modern + alt)</h3>
-<table border="1" cellpadding="6">
-  <tr><th>K‑Zeichen</th><th>Lautwert</th></tr>
-  <tr><td>ㄱ</td><td>g / k</td></tr>
-  <tr><td>ㄴ</td><td>n</td></tr>
-  <tr><td>ㄷ</td><td>d / t</td></tr>
-  <tr><td>ㄹ</td><td>l / r</td></tr>
-  <tr><td>ㅁ</td><td>m</td></tr>
-  <tr><td>ㅂ</td><td>b / p</td></tr>
-  <tr><td>ㅅ</td><td>s</td></tr>
-  <tr><td>ㅇ</td><td>ng (Auslaut), stumm im Anlaut)</td></tr>
-  <tr><td>ㅈ</td><td>z / j / dsch</td></tr>
-  <tr><td>ㅊ</td><td>tsch</td></tr>
-  <tr><td>ㅋ</td><td>k (hart)</td></tr>
-  <tr><td>ㅌ</td><td>t (hart)</td></tr>
-  <tr><td>ㅍ</td><td>p (hart)</td></tr>
-  <tr><td>ㅎ</td><td>h</td></tr>
-  <tr><td>ㅸ</td><td>v</td></tr>
-  <tr><td>ㅿ</td><td>weiches i</td></tr>
-  <tr><td>ㆆ</td><td>ich‑Laut</td></tr>
-  <tr><td>ㆅ</td><td>starkes h</td></tr>
-  <tr><td>ㆁ</td><td>ng‑Anlaut</td></tr>
-  <tr><td>ㅭ</td><td>lh</td></tr>
-</table>
-
-<hr>
-
-<h3>3. Vokale</h3>
-<table border="1" cellpadding="6">
-  <tr><th>K‑Zeichen</th><th>Lautwert</th></tr>
-  <tr><td>ㅏ</td><td>a</td></tr>
-  <tr><td>ㅓ</td><td>eo</td></tr>
-  <tr><td>ㅗ</td><td>o</td></tr>
-  <tr><td>ㅜ</td><td>u</td></tr>
-  <tr><td>ㅡ</td><td>eu</td></tr>
-  <tr><td>ㅣ</td><td>i</td></tr>
-  <tr><td>ㅔ</td><td>e</td></tr>
-  <tr><td>ㅐ</td><td>ä</td></tr>
-  <tr><td>ㅚ</td><td>ö</td></tr>
-  <tr><td>ㅟ</td><td>ü</td></tr>
-</table>
-
-<hr>
-
-<h3>4. Beispiele (Testumsetzung)</h3>
-
-<p><strong>Paris – bon‑jhoor</strong><br>본주르</p>
-<p><strong>Marseille – bon‑jhwah</strong><br>본주와</p>
-<p><strong>Lyon – bon‑jho</strong><br>본조</p>
-<p><strong>Québec – bon‑jhoo</strong><br>본주</p>
-<p><strong>Sachsen – Guhdn Dag</strong><br>구흔닥 · 궇튼탁</p>
-<p><strong>Schweiz – Grüezi</strong><br>그뤼에찌</p>
-<p><strong>Kölsch – Jooden Dach</strong><br>요덴 닿</p>
-<p><strong>Schwaben – Griaß di</strong><br>그리아쓰 디</p>
-<p><strong>Platt – Moin moin</strong><br>모인 모인</p>
-<p><strong>Steiermark – Griaß enk</strong><br>그리아스 엥크</p>  
+<h2>K-Wort Wörterbuch</h2>
 
 <input id="kwort" value="Mul">
+
 <button onclick="sucheKWort()">K-Wort suchen</button>
+
 <pre id="ergebnis"></pre>
+
+
+
+<script>
+
+
+// =======================
+// K-Laut Wörterbuch
+// =======================
+
+const kVokabel = {
+
+"Mul": {
+"id":102,
+"k_laut":"ㅁㅜㄹ",
+"sildam":"Mur",
+"deutsch":"Wasser",
+"hanmun":"水",
+"hanmun_reading":"Mul-su"
+}
+
+};
+
+
+
+// =======================
+// Deutsch → K-Laut Mapping
+// =======================
+
+const mapDeutsch = {
+
+"h":"ㅎ",
+"a":"ㅏ",
+"b":"ㅂ",
+"e":"ㅔ",
+"t":"ㅌ",
+"g":"ㄱ",
+"o":"ㅗ",
+"u":"ㅜ",
+"i":"ㅣ",
+"ä":"ㅐ",
+"ö":"ㅚ",
+"ü":"ㅟ",
+
+"n":"ㄴ",
+"r":"ㄹ",
+"m":"ㅁ",
+"f":"ㅍ",
+"s":"ㅅ",
+"z":"ㅈ",
+"j":"ㅈ",
+"c":"ㅈ",
+"p":"ㅂ",
+"l":"ㄹ",
+
+"jh":"ㅈ",
+"ch":"ㅈ",
+"sh":"ㅅ",
+
+"oo":"ㅜ",
+"ou":"ㅜ",
+
+"on":"옹",
+"an":"앙",
+"en":"엉",
+"in":"잉"
+
+};
+
+
+
+// =======================
+// Deutsch Wort umwandeln
+// =======================
+
+function umwandeln(){
+
+let w=document.getElementById("wort").value.toLowerCase();
+
+
+// Zerlegung
+
+document.getElementById("deutsch").innerText =
+w.split("").join(" · ");
+
+
+// K-Buchstaben
+
+let k=w.split("").map(
+c=>mapDeutsch[c] || "?"
+);
+
+
+document.getElementById("kbuchstaben").innerText =
+k.join(" · ");
+
+
+// Hangul
+
+document.getElementById("hangul").innerText =
+k.join("");
+
+
+// Rückführung
+
+let rück=k.map(
+j=>Object.keys(mapDeutsch)
+.find(key=>mapDeutsch[key]===j) || "?"
+);
+
+
+document.getElementById("zurueck").innerText =
+rück.join("");
+
+}
+
+
+
+// =======================
+// K-Wort Suche
+// =======================
+
+function sucheKWort(){
+
+let wort=document.getElementById("kwort").value;
+
+
+if(kVokabel[wort]){
+
+
+let daten=kVokabel[wort];
+
+
+document.getElementById("ergebnis").innerText =
+
+"ID: "+daten.id+
+
+"\nK-Laut: "+daten.k_laut+
+
+"\nSildam: "+daten.sildam+
+
+"\nDeutsch: "+daten.deutsch+
+
+"\nHanmun: "+daten.hanmun+
+
+"\nLesung: "+daten.hanmun_reading;
+
+
+}
+
+else {
+
+document.getElementById("ergebnis").innerText =
+"Kein K-Wort gefunden";
+
+}
+
+
+}
+
+
+</script>
+
+
 </body>
 </html>
 
