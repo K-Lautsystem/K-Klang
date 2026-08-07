@@ -217,21 +217,18 @@ function umwandeln(){
 function sucheKWort(){
 
     let wort = document
-    .getElementById("kwort")
-    .value
-    .trim()
-    .toLowerCase();
-
+        .getElementById("kwort")
+        .value
+        .trim()
+        .toLowerCase();
 
 
     if(kVokabel[wort]){
-
 
         let daten = kVokabel[wort];
 
 
         document.getElementById("ergebnis").innerText =
-
         "ID: " + daten.id +
         "\nK-Laut: " + daten.k_laut +
         "\nSildam: " + daten.sildam +
@@ -239,21 +236,16 @@ function sucheKWort(){
         "\nHanmun: " + daten.hanmun +
         "\nLesung: " + daten.hanmun_reading;
 
-
     }
 
     else {
 
-
         document.getElementById("ergebnis").innerText =
         "Kein K-Wort gefunden";
-
 
     }
 
 }
-
-
 
 
 function setzeBeispiel(wort){
@@ -264,19 +256,20 @@ function setzeBeispiel(wort){
 
 }
 
-
-
-
 window.onload = function(){
 
     console.log("K-Laut System geladen");
 
 };
 
-
-
 </script>
 
 </body>
-</html>
+</html>    
+
+
+    
+
+    
+
 
