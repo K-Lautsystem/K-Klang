@@ -55,24 +55,37 @@ pre {
 <h3>Rückführung</h3>
 <pre id="zurueck"></pre>
 
+
 <hr>
 
 
 <h2>K-Wort Wörterbuch</h2>
 
 <input id="kwort" placeholder="Wort eingeben">
+
 <button onclick="sucheKWort()">K-Wort suchen</button>
 
+
 <div style="margin-top:15px;">
-  <b>Beispiele:</b>
-  <button onclick="setzeBeispiel('habe')">habe</button>
-  <button onclick="setzeBeispiel('Mul')">Mul</button>
+<b>Beispiele:</b>
+
+<button onclick="setzeBeispiel('habe')">
+habe
+</button>
+
+<button onclick="setzeBeispiel('Mul')">
+Mul
+</button>
+
 </div>
+
 
 <pre id="ergebnis"></pre>
 
 
+
 <script>
+
 
 // =======================
 // K-Laut Wörterbuch
@@ -87,9 +100,20 @@ const kVokabel = {
         deutsch: "Wasser",
         hanmun: "水",
         hanmun_reading: "Mul-su"
+    },
+
+
+    "habe": {
+        id: 101,
+        k_laut: "ㅎㅏㅂㅔ",
+        sildam: "Habe",
+        deutsch: "haben",
+        hanmun: "有",
+        hanmun_reading: "Yu"
     }
 
 };
+
 
 
 
@@ -124,7 +148,7 @@ const mapDeutsch = {
 "l":"ㄹ",
 
 "jh":"ㅈ",
-"ch":"ㅈ",
+"ch":"ㅊ",
 "sh":"ㅅ",
 
 "oo":"ㅜ",
@@ -139,17 +163,22 @@ const mapDeutsch = {
 
 
 
+
 // =======================
 // Deutsch umwandeln
 // =======================
 
 function umwandeln(){
 
-    let w = document.getElementById("wort").value.toLowerCase();
+    let w = document
+    .getElementById("wort")
+    .value
+    .toLowerCase();
 
 
     document.getElementById("deutsch").innerText =
-        w.split("").join(" · ");
+    w.split("").join(" · ");
+
 
 
     let k = w.split("").map(
@@ -158,21 +187,24 @@ function umwandeln(){
 
 
     document.getElementById("kbuchstaben").innerText =
-        k.join(" · ");
+    k.join(" · ");
+
 
 
     document.getElementById("hangul").innerText =
-        k.join("");
+    k.join("");
+
 
 
     let rück = k.map(
-        j => Object.keys(mapDeutsch)
+        j =>
+        Object.keys(mapDeutsch)
         .find(key => mapDeutsch[key] === j) || "?"
     );
 
 
     document.getElementById("zurueck").innerText =
-        rück.join("");
+    rück.join("");
 
 }
 
@@ -185,13 +217,15 @@ function umwandeln(){
 function sucheKWort(){
 
     let wort = document
-        .getElementById("kwort")
-        .value
-        .trim()
-        .toLowerCase();
+    .getElementById("kwort")
+    .value
+    .trim()
+    .toLowerCase();
+
 
 
     if(kVokabel[wort]){
+
 
         let daten = kVokabel[wort];
 
@@ -205,18 +239,23 @@ function sucheKWort(){
         "\nHanmun: " + daten.hanmun +
         "\nLesung: " + daten.hanmun_reading;
 
+
     }
 
     else {
 
+
         document.getElementById("ergebnis").innerText =
         "Kein K-Wort gefunden";
+
 
     }
 
 }
 
-// Beispielwort einsetzen
+
+
+
 function setzeBeispiel(wort){
 
     document.getElementById("kwort").value = wort;
@@ -225,12 +264,15 @@ function setzeBeispiel(wort){
 
 }
 
-// Test beim Laden
+
+
+
 window.onload = function(){
 
     console.log("K-Laut System geladen");
 
 };
+
 
 
 </script>
