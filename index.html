@@ -6,7 +6,7 @@
 
 <style>
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 30px;
 }
 
@@ -17,14 +17,16 @@ input {
 
 button {
     font-size: 18px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     margin: 5px;
+    cursor: pointer;
 }
 
 pre {
-    background: #eee;
+    background: #eeeeee;
     padding: 15px;
     font-size: 18px;
+    min-height: 25px;
 }
 </style>
 
@@ -54,7 +56,6 @@ pre {
 <pre id="zurueck"></pre>
 
 
-
 <hr>
 
 
@@ -70,21 +71,20 @@ pre {
 
 <script>
 
-
 // =======================
 // K-Laut Wörterbuch
 // =======================
 
 const kVokabel = {
 
-"Mul": {
-"id":102,
-"k_laut":"ㅁㅜㄹ",
-"sildam":"Mur",
-"deutsch":"Wasser",
-"hanmun":"水",
-"hanmun_reading":"Mul-su"
-}
+    "mul": {
+        id: 102,
+        k_laut: "ㅁㅜㄹ",
+        sildam: "Mur",
+        deutsch: "Wasser",
+        hanmun: "水",
+        hanmun_reading: "Mul-su"
+    }
 
 };
 
@@ -137,47 +137,39 @@ const mapDeutsch = {
 
 
 // =======================
-// Deutsch Wort umwandeln
+// Deutsch umwandeln
 // =======================
 
 function umwandeln(){
 
-let w=document.getElementById("wort").value.toLowerCase();
+    let w = document.getElementById("wort").value.toLowerCase();
 
 
-// Zerlegung
-
-document.getElementById("deutsch").innerText =
-w.split("").join(" · ");
+    document.getElementById("deutsch").innerText =
+        w.split("").join(" · ");
 
 
-// K-Buchstaben
-
-let k=w.split("").map(
-c=>mapDeutsch[c] || "?"
-);
+    let k = w.split("").map(
+        c => mapDeutsch[c] || "?"
+    );
 
 
-document.getElementById("kbuchstaben").innerText =
-k.join(" · ");
+    document.getElementById("kbuchstaben").innerText =
+        k.join(" · ");
 
 
-// Hangul
-
-document.getElementById("hangul").innerText =
-k.join("");
+    document.getElementById("hangul").innerText =
+        k.join("");
 
 
-// Rückführung
-
-let rück=k.map(
-j=>Object.keys(mapDeutsch)
-.find(key=>mapDeutsch[key]===j) || "?"
-);
+    let rück = k.map(
+        j => Object.keys(mapDeutsch)
+        .find(key => mapDeutsch[key] === j) || "?"
+    );
 
 
-document.getElementById("zurueck").innerText =
-rück.join("");
+    document.getElementById("zurueck").innerText =
+        rück.join("");
 
 }
 
@@ -189,45 +181,48 @@ rück.join("");
 
 function sucheKWort(){
 
-let wort=document.getElementById("kwort").value;
+    let wort = document
+        .getElementById("kwort")
+        .value
+        .trim()
+        .toLowerCase();
 
 
-if(kVokabel[wort]){
+    if(kVokabel[wort]){
+
+        let daten = kVokabel[wort];
 
 
-let daten=kVokabel[wort];
+        document.getElementById("ergebnis").innerText =
 
+        "ID: " + daten.id +
+        "\nK-Laut: " + daten.k_laut +
+        "\nSildam: " + daten.sildam +
+        "\nDeutsch: " + daten.deutsch +
+        "\nHanmun: " + daten.hanmun +
+        "\nLesung: " + daten.hanmun_reading;
 
-document.getElementById("ergebnis").innerText =
+    }
 
-"ID: "+daten.id+
+    else {
 
-"\nK-Laut: "+daten.k_laut+
+        document.getElementById("ergebnis").innerText =
+        "Kein K-Wort gefunden";
 
-"\nSildam: "+daten.sildam+
-
-"\nDeutsch: "+daten.deutsch+
-
-"\nHanmun: "+daten.hanmun+
-
-"\nLesung: "+daten.hanmun_reading;
-
-
-}
-
-else {
-
-document.getElementById("ergebnis").innerText =
-"Kein K-Wort gefunden";
-
-}
-
+    }
 
 }
+
+
+// Test beim Laden
+window.onload = function(){
+
+    console.log("K-Laut System geladen");
+
+};
 
 
 </script>
-
 
 </body>
 </html>
