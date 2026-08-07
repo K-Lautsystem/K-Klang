@@ -107,10 +107,9 @@ function umwandeln() {
 
     document.getElementById("kbuchstaben").innerText =
         k.join(" · ");
-
-    document.getElementById("hangul").innerText =
-        k.join("");
-
+    
+document.getElementById("hangul").innerText = kombiniereHangul(k);
+    
     let rück = k.map(j =>
         Object.keys(mapDeutsch).find(key => mapDeutsch[key] === j) || "?"
     );
