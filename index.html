@@ -2,31 +2,23 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>K-Laut System</title>
+<title>K-Laut System – habe + mul</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 30px;
 }
-input {
+input, button {
     font-size: 18px;
-    padding: 5px;
-}
-button {
-    font-size: 18px;
-    padding: 8px 15px;
-    margin: 5px;
-    cursor: pointer;
+    padding: 6px;
 }
 pre {
-    background: #eeeeee;
-    padding: 15px;
+    background: #f0f0f0;
+    padding: 12px;
     font-size: 18px;
-    min-height: 25px;
 }
 </style>
-
 </head>
 
 <body>
@@ -35,10 +27,10 @@ pre {
 
 <h2>Deutsch → K-Laut</h2>
 
-<input id="wort" value="Mul">
+<input id="wort" value="habe">
 <button onclick="umwandeln()">Umwandeln</button>
 
-<h3>Deutsch Zerlegung</h3>
+<h3>Zerlegung</h3>
 <pre id="deutsch"></pre>
 
 <h3>K-Buchstaben</h3>
@@ -55,31 +47,22 @@ pre {
 <h2>K-Wort Wörterbuch</h2>
 
 <input id="kwort" placeholder="Wort eingeben">
-<button onclick="sucheKWort()">K-Wort suchen</button>
+<button onclick="sucheKWort()">Suchen</button>
 
-<div style="margin-top:15px;">
+<div style="margin-top:10px;">
 <b>Beispiele:</b>
 <button onclick="setzeBeispiel('habe')">habe</button>
-<button onclick="setzeBeispiel('mul')">Mul</button>
+<button onclick="setzeBeispiel('mul')">mul</button>
 </div>
 
 <pre id="ergebnis"></pre>
 
 <script>
 // =======================
-// Wörterbuch
+// Wörterbuch (NEU)
 // =======================
 
 const kVokabel = {
-
-    "mul": {
-        id: 102,
-        k_laut: "ㅁㅜㄹ",
-        sildam: "Mur",
-        deutsch: "Wasser",
-        hanmun: "水",
-        hanmun_reading: "Mul-su"
-    },
 
     "habe": {
         id: 101,
@@ -88,30 +71,33 @@ const kVokabel = {
         deutsch: "haben",
         hanmun: "有",
         hanmun_reading: "Yu"
+    },
+
+    "mul": {
+        id: 102,
+        k_laut: "ㅁㅜㄹ",
+        sildam: "Mur",
+        deutsch: "Wasser",
+        hanmun: "水",
+        hanmun_reading: "Mul-su"
     }
 
 };
 
 // =======================
-// Deutsch → K-Laut Mapping
+// Mapping
 // =======================
 
 const mapDeutsch = {
 "h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ",
-"t":"ㅌ","g":"ㄱ","o":"ㅗ","u":"ㅜ","i":"ㅣ",
-"ä":"ㅐ","ö":"ㅚ","ü":"ㅟ",
-"n":"ㄴ","r":"ㄹ","m":"ㅁ","f":"ㅍ","s":"ㅅ",
-"z":"ㅈ","j":"ㅈ","c":"ㅈ","p":"ㅂ","l":"ㄹ",
-"jh":"ㅈ","ch":"ㅊ","sh":"ㅅ",
-"oo":"ㅜ","ou":"ㅜ",
-"on":"옹","an":"앙","en":"엉","in":"잉"
+"m":"ㅁ","u":"ㅜ","l":"ㄹ"
 };
 
 // =======================
-// Deutsch umwandeln
+// Umwandlung
 // =======================
 
-function umwandeln(){
+function umwandeln() {
     let w = document.getElementById("wort").value.toLowerCase();
 
     document.getElementById("deutsch").innerText =
@@ -134,14 +120,14 @@ function umwandeln(){
 }
 
 // =======================
-// K-Wort Suche
+// Wörterbuchsuche
 // =======================
 
-function sucheKWort(){
-    let wort = document.getElementById("kwort").value.trim().toLowerCase();
+function sucheKWort() {
+    let w = document.getElementById("kwort").value.trim().toLowerCase();
 
-    if(kVokabel[wort]){
-        let d = kVokabel[wort];
+    if (kVokabel[w]) {
+        let d = kVokabel[w];
         document.getElementById("ergebnis").innerText =
             "ID: " + d.id +
             "\nK-Laut: " + d.k_laut +
@@ -155,11 +141,10 @@ function sucheKWort(){
     }
 }
 
-function setzeBeispiel(w){
+function setzeBeispiel(w) {
     document.getElementById("kwort").value = w;
     sucheKWort();
 }
-
 </script>
 
 </body>
