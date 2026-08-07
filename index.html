@@ -9,19 +9,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 30px;
 }
-
 input {
     font-size: 18px;
     padding: 5px;
 }
-
 button {
     font-size: 18px;
     padding: 8px 15px;
     margin: 5px;
     cursor: pointer;
 }
-
 pre {
     background: #eeeeee;
     padding: 15px;
@@ -36,11 +33,9 @@ pre {
 
 <h1>K-Laut System</h1>
 
-
 <h2>Deutsch → K-Laut</h2>
 
 <input id="wort" value="Mul">
-
 <button onclick="umwandeln()">Umwandeln</button>
 
 <h3>Deutsch Zerlegung</h3>
@@ -55,40 +50,24 @@ pre {
 <h3>Rückführung</h3>
 <pre id="zurueck"></pre>
 
-
 <hr>
-
 
 <h2>K-Wort Wörterbuch</h2>
 
 <input id="kwort" placeholder="Wort eingeben">
-
 <button onclick="sucheKWort()">K-Wort suchen</button>
-
 
 <div style="margin-top:15px;">
 <b>Beispiele:</b>
-
-<button onclick="setzeBeispiel('habe')">
-habe
-</button>
-
-<button onclick="setzeBeispiel('Mul')">
-Mul
-</button>
-
+<button onclick="setzeBeispiel('habe')">habe</button>
+<button onclick="setzeBeispiel('mul')">Mul</button>
 </div>
-
 
 <pre id="ergebnis"></pre>
 
-
-
 <script>
-
-
 // =======================
-// K-Laut Wörterbuch
+// Wörterbuch
 // =======================
 
 const kVokabel = {
@@ -102,7 +81,6 @@ const kVokabel = {
         hanmun_reading: "Mul-su"
     },
 
-
     "habe": {
         id: 101,
         k_laut: "ㅎㅏㅂㅔ",
@@ -114,162 +92,75 @@ const kVokabel = {
 
 };
 
-
-
-
 // =======================
 // Deutsch → K-Laut Mapping
 // =======================
 
 const mapDeutsch = {
-
-"h":"ㅎ",
-"a":"ㅏ",
-"b":"ㅂ",
-"e":"ㅔ",
-"t":"ㅌ",
-"g":"ㄱ",
-"o":"ㅗ",
-"u":"ㅜ",
-"i":"ㅣ",
-"ä":"ㅐ",
-"ö":"ㅚ",
-"ü":"ㅟ",
-
-"n":"ㄴ",
-"r":"ㄹ",
-"m":"ㅁ",
-"f":"ㅍ",
-"s":"ㅅ",
-"z":"ㅈ",
-"j":"ㅈ",
-"c":"ㅈ",
-"p":"ㅂ",
-"l":"ㄹ",
-
-"jh":"ㅈ",
-"ch":"ㅊ",
-"sh":"ㅅ",
-
-"oo":"ㅜ",
-"ou":"ㅜ",
-
-"on":"옹",
-"an":"앙",
-"en":"엉",
-"in":"잉"
-
+"h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ",
+"t":"ㅌ","g":"ㄱ","o":"ㅗ","u":"ㅜ","i":"ㅣ",
+"ä":"ㅐ","ö":"ㅚ","ü":"ㅟ",
+"n":"ㄴ","r":"ㄹ","m":"ㅁ","f":"ㅍ","s":"ㅅ",
+"z":"ㅈ","j":"ㅈ","c":"ㅈ","p":"ㅂ","l":"ㄹ",
+"jh":"ㅈ","ch":"ㅊ","sh":"ㅅ",
+"oo":"ㅜ","ou":"ㅜ",
+"on":"옹","an":"앙","en":"엉","in":"잉"
 };
-
-
-
 
 // =======================
 // Deutsch umwandeln
 // =======================
 
 function umwandeln(){
-
-    let w = document
-    .getElementById("wort")
-    .value
-    .toLowerCase();
-
+    let w = document.getElementById("wort").value.toLowerCase();
 
     document.getElementById("deutsch").innerText =
-    w.split("").join(" · ");
+        w.split("").join(" · ");
 
-
-
-    let k = w.split("").map(
-        c => mapDeutsch[c] || "?"
-    );
-
+    let k = w.split("").map(c => mapDeutsch[c] || "?");
 
     document.getElementById("kbuchstaben").innerText =
-    k.join(" · ");
-
-
+        k.join(" · ");
 
     document.getElementById("hangul").innerText =
-    k.join("");
+        k.join("");
 
-
-
-    let rück = k.map(
-        j =>
-        Object.keys(mapDeutsch)
-        .find(key => mapDeutsch[key] === j) || "?"
+    let rück = k.map(j =>
+        Object.keys(mapDeutsch).find(key => mapDeutsch[key] === j) || "?"
     );
 
-
     document.getElementById("zurueck").innerText =
-    rück.join("");
-
+        rück.join("");
 }
-
-
 
 // =======================
 // K-Wort Suche
 // =======================
 
 function sucheKWort(){
-
-    let wort = document
-        .getElementById("kwort")
-        .value
-        .trim()
-        .toLowerCase();
-
+    let wort = document.getElementById("kwort").value.trim().toLowerCase();
 
     if(kVokabel[wort]){
-
-        let daten = kVokabel[wort];
-
-
+        let d = kVokabel[wort];
         document.getElementById("ergebnis").innerText =
-        "ID: " + daten.id +
-        "\nK-Laut: " + daten.k_laut +
-        "\nSildam: " + daten.sildam +
-        "\nDeutsch: " + daten.deutsch +
-        "\nHanmun: " + daten.hanmun +
-        "\nLesung: " + daten.hanmun_reading;
-
-    }
-
-    else {
-
+            "ID: " + d.id +
+            "\nK-Laut: " + d.k_laut +
+            "\nSildam: " + d.sildam +
+            "\nDeutsch: " + d.deutsch +
+            "\nHanmun: " + d.hanmun +
+            "\nLesung: " + d.hanmun_reading;
+    } else {
         document.getElementById("ergebnis").innerText =
-        "Kein K-Wort gefunden";
-
+            "Kein K-Wort gefunden";
     }
-
 }
 
-
-function setzeBeispiel(wort){
-
-    document.getElementById("kwort").value = wort;
-
+function setzeBeispiel(w){
+    document.getElementById("kwort").value = w;
     sucheKWort();
-
 }
-
-window.onload = function(){
-
-    console.log("K-Laut System geladen");
-
-};
 
 </script>
 
 </body>
-</html>    
-
-
-    
-
-    
-
-
+</html>
