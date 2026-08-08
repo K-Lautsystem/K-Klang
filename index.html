@@ -17,6 +17,9 @@ body
 <input id="kwort" value="mul">
 
 <button onclick="sucheKWort()">Suchen</button>
+<button onclick="zeigeKWort('Kha')">Kha</button>
+<button onclick="zeigeKWort('Muni')">Muni</button>
+<button onclick="zeigeKWort('A')">A</button>   
 <hr>   
     {
     font-family: Arial, sans-serif;
@@ -202,6 +205,22 @@ const kVokabel = {
 
 };
 
+function zeigeKWort() {
+    let wort = document.getElementById("kwort").value.trim();
+
+    let daten = kWorte[wort];
+
+    if (daten) {
+        document.getElementById("ergebnis").innerText =
+            "Korean: " + daten.korean +
+            "\nSildam: " + daten.sildam +
+            "\nBedeutung: " + daten.bedeutung;
+    } else {
+        document.getElementById("ergebnis").innerText =
+            "K-Wort nicht gefunden: " + wort;
+    }
+}
+
     const kVokabel = {
 
     "habe": {
@@ -358,6 +377,8 @@ function setzeBeispiel(w) {
 umwandeln();
 
 </script>
-
+<input id="kwort" value="Mul">
+<button onclick="zeigeKWort()">K-Wort suchen</button>
+<pre id="ergebnis"></pre>
 </body>
 </html>
