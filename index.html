@@ -2,28 +2,128 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>K-Laut System – habe + mul</title>
+<title>K-Laut System – Kaggle + GitHub</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 30px;
+    line-height: 1.6;
+}
+h1, h2, h3 {
+    color: #222;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 25px;
+}
+th, td {
+    border: 1px solid #999;
+    padding: 6px 10px;
+    text-align: left;
+}
+th {
+    background: #f0f0f0;
 }
 input, button {
     font-size: 18px;
     padding: 6px;
+    margin: 3px;
 }
 pre {
-    background: #f0f0f0;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
     padding: 12px;
     font-size: 18px;
+}
+hr {
+    margin: 40px 0;
 }
 </style>
 </head>
 
 <body>
 
-<h1>K-Laut System</h1>
+<!-- ========================= -->
+<!-- ALTER KAGGLE-TEIL -->
+<!-- ========================= -->
+
+<h1>K-Lautsystem (K-Klang)</h1>
+
+<h2>Deutsch → K-Laut → Hangul → Deutsch</h2>
+
+<p>
+Das K-Lautsystem ist ein phonetisches System zur Darstellung von Lauten
+mit koreanischen Hangul-Zeichen.
+</p>
+
+<h3>Beispiel: Habe</h3>
+
+<p><b>Deutsch:</b><br>h · a · b · e</p>
+
+<p><b>K-Laut:</b><br>ㅎ · ㅏ · ㅂ · ㅔ</p>
+
+<p><b>Hangul:</b><br>하베</p>
+
+<h3>Ziel</h3>
+
+<ul>
+<li>Untersuchung von Lautverbindungen zwischen Sprachen</li>
+<li>Darstellung deutscher Aussprache mit Hangul</li>
+<li>Aufbau einer Grundlage für zukünftige KI-Anwendungen</li>
+</ul>
+
+<p><b>Projekt:</b> K-Lautsystem – Universelles Klangsystem</p>
+
+<h2>Grundtabelle</h2>
+
+<table>
+<tr><th>Deutsch-Laut</th><th>K-Laut</th><th>Hangul</th></tr>
+<tr><td>a</td><td>A</td><td>ㅏ</td></tr>
+<tr><td>e</td><td>E</td><td>ㅔ</td></tr>
+<tr><td>i</td><td>I</td><td>ㅣ</td></tr>
+<tr><td>o</td><td>O</td><td>ㅗ</td></tr>
+<tr><td>u</td><td>U</td><td>ㅜ</td></tr>
+<tr><td>h</td><td>H</td><td>ㅎ</td></tr>
+<tr><td>m</td><td>M</td><td>ㅁ</td></tr>
+<tr><td>n</td><td>N</td><td>ㄴ</td></tr>
+<tr><td>b</td><td>B</td><td>ㅂ</td></tr>
+<tr><td>d</td><td>D</td><td>ㄷ</td></tr>
+<tr><td>g</td><td>G</td><td>ㄱ</td></tr>
+<tr><td>s</td><td>S</td><td>ㅅ</td></tr>
+<tr><td>r</td><td>R</td><td>ㄹ</td></tr>
+<tr><td>l</td><td>L</td><td>ㄹ</td></tr>
+<tr><td>t</td><td>T</td><td>ㅌ</td></tr>
+<tr><td>k</td><td>K</td><td>ㅋ</td></tr>
+<tr><td>p</td><td>P</td><td>ㅍ</td></tr>
+<tr><td>j</td><td>J</td><td>ㅈ</td></tr>
+<tr><td>w</td><td>W</td><td>ㅝ / ㅜ</td></tr>
+</table>
+
+<h2>Beispiele</h2>
+
+<table>
+<tr><th>Nr.</th><th>Deutsch</th><th>Lautfolge</th><th>K-Laut</th><th>Hangul</th></tr>
+<tr><td>1</td><td>Habe</td><td>h-a-b-e</td><td>ㅎㅏㅂㅔ</td><td>하베</td></tr>
+<tr><td>2</td><td>Haus</td><td>h-a-u-s</td><td>ㅎㅏㅜㅅ</td><td>하우스</td></tr>
+<tr><td>3</td><td>Hand</td><td>h-a-n-d</td><td>ㅎㅏㄴㄷ</td><td>한드</td></tr>
+<tr><td>4</td><td>Mann</td><td>m-a-n</td><td>ㅁㅏㄴ</td><td>만</td></tr>
+<tr><td>5</td><td>Frau</td><td>f-r-a-u</td><td>ㅍㄹㅏㅜ</td><td>프라우</td></tr>
+<tr><td>6</td><td>Kind</td><td>k-i-n-d</td><td>ㅋㅣㄴㄷ</td><td>킨드</td></tr>
+<tr><td>7</td><td>Wasser</td><td>w-a-s-s-e-r</td><td>ㅜㅏㅅㅅㅔㄹ</td><td>우아쎌</td></tr>
+<tr><td>8</td><td>Erde</td><td>e-r-d-e</td><td>ㅔㄹㄷㅔ</td><td>에르데</td></tr>
+<tr><td>9</td><td>Sonne</td><td>s-o-n-e</td><td>ㅅㅗㄴㅔ</td><td>소네</td></tr>
+<tr><td>10</td><td>Licht</td><td>l-i-h-t</td><td>ㄹㅣㅎㅌ</td><td>리흐트</td></tr>
+</table>
+
+<hr>
+
+<!-- ========================= -->
+<!-- NEUER GITHUB-TEIL -->
+<!-- ========================= -->
+
+<h1>K-Laut System – Interaktive Version</h1>
 
 <h2>Deutsch → K-Laut</h2>
 
@@ -48,11 +148,6 @@ pre {
 
 <input id="kwort" placeholder="Wort eingeben">
 <button onclick="sucheKWort()">Suchen</button>
-<button onclick="zeigeKWort('Kha')">Kha</button>
-<button onclick="zeigeKWort('Muni')">Muni</button>
-<button onclick="zeigeKWort('A-chim')">A-chim</button>
-<button onclick="zeigeKWort('An-ninsiya')">An-ninsiya</button>
-<button onclick="zeigeKWort('A')">A</button>
 
 <div style="margin-top:10px;">
 <b>Beispiele:</b>
@@ -73,7 +168,7 @@ const kVokabel = {
         id: 101,
         k_laut: "ㅎㅏㅂㅔ",
         sildam: "Habe",
-        deutsch: "haben",
+        deutsch: "haben"
     },
 
     "mul": {
@@ -92,45 +187,8 @@ const kVokabel = {
 // =======================
 
 const mapDeutsch = {
-"h":"ㅎ","a":"ㅏ","b":"ㅂ","e":"ㅔ",
-"m":"ㅁ","u":"ㅜ","l":"ㄹ"
-};
-
-const deutschKlang = {
-  tag:    { klang: 'Ta-g',    klaut: '탁' },
-  mutter: { klang: 'Mu-ter',  klaut: '무터' },
-  vater:  { klang: 'Hwa-ter', klaut: '화터' },
-  sonne:  { klang: 'Son-ne',  klaut: '손네' },                      
-  haus:   { klang: 'Ha-us',   klaut: '하우스' },
-  stern:  { klang: 'S-te-rn', klaut: '스테른' }
-};    
-
-const kWorte = {
-
-  "A": {
-    korean: "아",
-    sildam: "अ",
-    bedeutung: "Ah!, Anfang, Laut A"
-  },
-
-  "A-chim": {
-    korean: "아침",
-    sildam: "a + chim",
-    bedeutung: "Morgen, Beginn des Lichts"
-  },
-
-  "An-ninsiya": {
-    korean: "안녕하세요",
-    basis: "안녕",
-    bedeutung: "Gruß, Hallo, Frieden"
-  },
-
-  "Muni": {
-    korean: "어머니 / 엄마 / 어미",
-    sildam: "मुनि",
-    bedeutung: "Mutter; Muni = weise Person"
-  }
-
+    h:"ㅎ", a:"ㅏ", b:"ㅂ", e:"ㅔ",
+    m:"ㅁ", u:"ㅜ", l:"ㄹ"
 };
 
 // =======================
@@ -138,6 +196,7 @@ const kWorte = {
 // =======================
 
 function umwandeln() {
+
     let w = document.getElementById("wort").value.toLowerCase();
 
     document.getElementById("deutsch").innerText =
@@ -148,7 +207,6 @@ function umwandeln() {
     document.getElementById("kbuchstaben").innerText =
         k.join(" · ");
 
-    // ⭐ Spezielle Silbenbildung
     if (w === "mul") {
         document.getElementById("hangul").innerText = kombiniereMul(k);
     }
@@ -159,12 +217,12 @@ function umwandeln() {
         document.getElementById("hangul").innerText = k.join("");
     }
 
-    let rück = k.map(j =>
+    let rueck = k.map(j =>
         Object.keys(mapDeutsch).find(key => mapDeutsch[key] === j) || "?"
     );
 
     document.getElementById("zurueck").innerText =
-        rück.join("");
+        rueck.join("");
 }
 
 // =======================
@@ -172,15 +230,9 @@ function umwandeln() {
 // =======================
 
 function kombiniereMul(k) {
-    const initial = k[0]; // ㅁ
-    const vowel   = k[1]; // ㅜ
-    const final   = k[2]; // ㄹ
-
-    const baseInitial = {"ㅁ":6};
-    const baseVowel   = {"ㅜ":13};
-    const baseFinal   = {"ㄹ":8};
 
     let code = 0xAC00 + (6 * 21 * 28) + (13 * 28) + 8;
+
     return String.fromCharCode(code); // 물
 }
 
@@ -189,11 +241,12 @@ function kombiniereMul(k) {
 // =======================
 
 function kombiniereHabe(k) {
-    // ㅎㅏ = 하
-    let first = String.fromCharCode(0xAC00 + (18 * 21 * 28) + (0 * 28));
 
-    // ㅂㅔ = 베
-    let second = String.fromCharCode(0xAC00 + (7 * 21 * 28) + (5 * 28));
+    let first =
+        String.fromCharCode(0xAC00 + (18 * 21 * 28));
+
+    let second =
+        String.fromCharCode(0xAC00 + (7 * 21 * 28) + (5 * 28));
 
     return first + second; // 하베
 }
@@ -203,29 +256,48 @@ function kombiniereHabe(k) {
 // =======================
 
 function sucheKWort() {
-    let w = document.getElementById("kwort").value.trim().toLowerCase();
+
+    let w = document.getElementById("kwort")
+        .value
+        .trim()
+        .toLowerCase();
 
     if (kVokabel[w]) {
+
         let d = kVokabel[w];
-        document.getElementById("ergebnis").innerText =
+
+        let text =
             "ID: " + d.id +
             "\nK-Laut: " + d.k_laut +
             "\nSildam: " + d.sildam +
-            "\nDeutsch: " + d.deutsch +
-            "\nHanmun: " + d.hanmun +
-            "\nLesung: " + d.hanmun_reading;
+            "\nDeutsch: " + d.deutsch;
+
+        if (d.hanmun) {
+            text +=
+                "\nHanmun: " + d.hanmun +
+                "\nLesung: " + d.hanmun_reading;
+        }
+
+        document.getElementById("ergebnis").innerText = text;
+
     } else {
+
         document.getElementById("ergebnis").innerText =
             "Kein K-Wort gefunden";
     }
 }
 
 function setzeBeispiel(w) {
+
     document.getElementById("kwort").value = w;
+
     sucheKWort();
 }
+
+// Startanzeige
+umwandeln();
+
 </script>
 
 </body>
 </html>
-
