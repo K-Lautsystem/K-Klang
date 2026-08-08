@@ -5,7 +5,20 @@
 <title>K-Laut System – Kaggle + GitHub</title>
 
 <style>
-body {
+body 
+    <!-- Schnellstart oben -->
+
+<h2>Schnellstart</h2>
+
+<input id="wort" value="habe">
+
+<button onclick="umwandeln()">Umwandeln</button>
+
+<input id="kwort" value="mul">
+
+<button onclick="sucheKWort()">Suchen</button>
+<hr>   
+    {
     font-family: Arial, sans-serif;
     margin: 30px;
     line-height: 1.6;
@@ -148,6 +161,13 @@ mit koreanischen Hangul-Zeichen.
 
 <input id="kwort" placeholder="Wort eingeben">
 <button onclick="sucheKWort()">Suchen</button>
+
+<!-- Neue K-Wort-Buttons -->
+<button onclick="zeigeKWort('Kha')">Kha</button>
+<button onclick="zeigeKWort('Muni')">Muni</button>
+<button onclick="zeigeKWort('A-chim')">A-chim</button>
+<button onclick="zeigeKWort('An-ninsiya')">An-ninsiya</button>
+<button onclick="zeigeKWort('A')">A</button>
 
 <div style="margin-top:10px;">
 <b>Beispiele:</b>
