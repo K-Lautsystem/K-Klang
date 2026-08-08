@@ -1,68 +1,84 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <title>K-Laut System – Kaggle + GitHub</title>
 
 <style>
-body 
-    <!-- Schnellstart oben -->
-
-<h2>Schnellstart</h2>
-
-<input id="wort" value="habe">
-
-<button onclick="umwandeln()">Umwandeln</button>
-
-<input id="kwort" value="mul">
-
-<button onclick="sucheKWort()">Suchen</button>
-<button onclick="zeigeKWort('Kha')">Kha</button>
-<button onclick="zeigeKWort('Muni')">Muni</button>
-<button onclick="zeigeKWort('A')">A</button>   
-<hr>   
-    {
+body {
     font-family: Arial, sans-serif;
     margin: 30px;
     line-height: 1.6;
 }
+
 h1, h2, h3 {
     color: #222;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 25px;
 }
+
 th, td {
     border: 1px solid #999;
     padding: 6px 10px;
     text-align: left;
 }
+
 th {
     background: #f0f0f0;
 }
+
 input, button {
     font-size: 18px;
     padding: 6px;
     margin: 3px;
 }
+
 pre {
     background: #f5f5f5;
     border: 1px solid #ccc;
     padding: 12px;
     font-size: 18px;
+    white-space: pre-wrap;
 }
+
 hr {
     margin: 40px 0;
 }
 </style>
+
 </head>
 
 <body>
 
 <!-- ========================= -->
+
+<!-- SCHNELLSTART -->
+
+<!-- ========================= -->
+
+<h2>Schnellstart</h2>
+
+<input id="wort" value="habe">
+<button onclick="umwandeln()">Umwandeln</button>
+
+<br>
+
+<input id="kwort" value="mul">
+<button onclick="sucheKWort()">Suchen</button>
+
+<button onclick="zeigeKWort('Kha')">Kha</button> <button onclick="zeigeKWort('Muni')">Muni</button> <button onclick="zeigeKWort('A')">A</button>
+
+<hr>
+
+<!-- ========================= -->
+
 <!-- ALTER KAGGLE-TEIL -->
+
 <!-- ========================= -->
 
 <h1>K-Lautsystem (K-Klang)</h1>
@@ -95,7 +111,12 @@ mit koreanischen Hangul-Zeichen.
 <h2>Grundtabelle</h2>
 
 <table>
-<tr><th>Deutsch-Laut</th><th>K-Laut</th><th>Hangul</th></tr>
+<tr>
+    <th>Deutsch-Laut</th>
+    <th>K-Laut</th>
+    <th>Hangul</th>
+</tr>
+
 <tr><td>a</td><td>A</td><td>ㅏ</td></tr>
 <tr><td>e</td><td>E</td><td>ㅔ</td></tr>
 <tr><td>i</td><td>I</td><td>ㅣ</td></tr>
@@ -120,31 +141,109 @@ mit koreanischen Hangul-Zeichen.
 <h2>Beispiele</h2>
 
 <table>
-<tr><th>Nr.</th><th>Deutsch</th><th>Lautfolge</th><th>K-Laut</th><th>Hangul</th></tr>
-<tr><td>1</td><td>Habe</td><td>h-a-b-e</td><td>ㅎㅏㅂㅔ</td><td>하베</td></tr>
-<tr><td>2</td><td>Haus</td><td>h-a-u-s</td><td>ㅎㅏㅜㅅ</td><td>하우스</td></tr>
-<tr><td>3</td><td>Hand</td><td>h-a-n-d</td><td>ㅎㅏㄴㄷ</td><td>한드</td></tr>
-<tr><td>4</td><td>Mann</td><td>m-a-n</td><td>ㅁㅏㄴ</td><td>만</td></tr>
-<tr><td>5</td><td>Frau</td><td>f-r-a-u</td><td>ㅍㄹㅏㅜ</td><td>프라우</td></tr>
-<tr><td>6</td><td>Kind</td><td>k-i-n-d</td><td>ㅋㅣㄴㄷ</td><td>킨드</td></tr>
-<tr><td>7</td><td>Wasser</td><td>w-a-s-s-e-r</td><td>ㅜㅏㅅㅅㅔㄹ</td><td>우아쎌</td></tr>
-<tr><td>8</td><td>Erde</td><td>e-r-d-e</td><td>ㅔㄹㄷㅔ</td><td>에르데</td></tr>
-<tr><td>9</td><td>Sonne</td><td>s-o-n-e</td><td>ㅅㅗㄴㅔ</td><td>소네</td></tr>
-<tr><td>10</td><td>Licht</td><td>l-i-h-t</td><td>ㄹㅣㅎㅌ</td><td>리흐트</td></tr>
+<tr>
+    <th>Nr.</th>
+    <th>Deutsch</th>
+    <th>Lautfolge</th>
+    <th>K-Laut</th>
+    <th>Hangul</th>
+</tr>
+
+<tr>
+    <td>1</td>
+    <td>Habe</td>
+    <td>h-a-b-e</td>
+    <td>ㅎㅏㅂㅔ</td>
+    <td>하베</td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>Haus</td>
+    <td>h-a-u-s</td>
+    <td>ㅎㅏㅜㅅ</td>
+    <td>하우스</td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>Hand</td>
+    <td>h-a-n-d</td>
+    <td>ㅎㅏㄴㄷ</td>
+    <td>한드</td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>Mann</td>
+    <td>m-a-n</td>
+    <td>ㅁㅏㄴ</td>
+    <td>만</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>Frau</td>
+    <td>f-r-a-u</td>
+    <td>ㅍㄹㅏㅜ</td>
+    <td>프라우</td>
+</tr>
+
+<tr>
+    <td>6</td>
+    <td>Kind</td>
+    <td>k-i-n-d</td>
+    <td>ㅋㅣㄴㄷ</td>
+    <td>킨드</td>
+</tr>
+
+<tr>
+    <td>7</td>
+    <td>Wasser</td>
+    <td>w-a-s-s-e-r</td>
+    <td>ㅜㅏㅅㅅㅔㄹ</td>
+    <td>우아쎌</td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>Erde</td>
+    <td>e-r-d-e</td>
+    <td>ㅔㄹㄷㅔ</td>
+    <td>에르데</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>Sonne</td>
+    <td>s-o-n-e</td>
+    <td>ㅅㅗㄴㅔ</td>
+    <td>소네</td>
+</tr>
+
+<tr>
+    <td>10</td>
+    <td>Licht</td>
+    <td>l-i-h-t</td>
+    <td>ㄹㅣㅎㅌ</td>
+    <td>리흐트</td>
+</tr>
 </table>
 
 <hr>
 
 <!-- ========================= -->
-<!-- NEUER GITHUB-TEIL -->
+
+<!-- INTERAKTIVER GITHUB-TEIL -->
+
 <!-- ========================= -->
 
 <h1>K-Laut System – Interaktive Version</h1>
 
 <h2>Deutsch → K-Laut</h2>
 
-<input id="wort" value="habe">
-<button onclick="umwandeln()">Umwandeln</button>
+<input id="wort2" value="habe">
+<button onclick="umwandeln2()">Umwandeln</button>
 
 <h3>Zerlegung</h3>
 <pre id="deutsch"></pre>
@@ -160,30 +259,34 @@ mit koreanischen Hangul-Zeichen.
 
 <hr>
 
+<!-- ========================= -->
+
+<!-- K-WORT WÖRTERBUCH -->
+
+<!-- ========================= -->
+
 <h2>K-Wort Wörterbuch</h2>
 
-<input id="kwort" placeholder="Wort eingeben">
+<input id="kwort2" value="mul" placeholder="Wort eingeben">
+
 <button onclick="sucheKWort()">Suchen</button>
 
-<!-- Neue K-Wort-Buttons -->
-<button onclick="zeigeKWort('Kha')">Kha</button>
-<button onclick="zeigeKWort('Muni')">Muni</button>
-<button onclick="zeigeKWort('A-chim')">A-chim</button>
-<button onclick="zeigeKWort('An-ninsiya')">An-ninsiya</button>
-<button onclick="zeigeKWort('A')">A</button>
+<button onclick="zeigeKWort('Kha')">Kha</button> <button onclick="zeigeKWort('Muni')">Muni</button> <button onclick="zeigeKWort('A-chim')">A-chim</button> <button onclick="zeigeKWort('An-ninsiya')">An-ninsiya</button> <button onclick="zeigeKWort('A')">A</button>
 
 <div style="margin-top:10px;">
 <b>Beispiele:</b>
-<button onclick="setzeBeispiel('habe')">habe</button>
-<button onclick="setzeBeispiel('mul')">mul</button>
+
+<button onclick="setzeBeispiel('habe')">habe</button> <button onclick="setzeBeispiel('mul')">mul</button>
+
 </div>
 
 <pre id="ergebnis"></pre>
 
 <script>
-// =======================
-// Wörterbuch
-// =======================
+
+// =====================================================
+// K-VOKABELN
+// =====================================================
 
 const kVokabel = {
 
@@ -205,180 +308,290 @@ const kVokabel = {
 
 };
 
-function zeigeKWort() {
-    let wort = document.getElementById("kwort").value.trim();
 
-    let daten = kWorte[wort];
-
-    if (daten) {
-        document.getElementById("ergebnis").innerText =
-            "Korean: " + daten.korean +
-            "\nSildam: " + daten.sildam +
-            "\nBedeutung: " + daten.bedeutung;
-    } else {
-        document.getElementById("ergebnis").innerText =
-            "K-Wort nicht gefunden: " + wort;
-    }
-}
-
-    const kVokabel = {
-
-    "habe": {
-        id: 101,
-        k_laut: "ㅎㅏㅂㅔ",
-        sildam: "Habe",
-        deutsch: "haben"
-    },
-
-    "mul": {
-        id: 102,
-        k_laut: "ㅁㅜㄹ",
-        sildam: "Mur",
-        deutsch: "Wasser"
-    }
-
-};   
+// =====================================================
+// K-WÖRTER
+// =====================================================
 
 const kWorte = {
 
-  "A": {
-    korean: "아",
-    sildam: "अ",
-    bedeutung: "Ah!, Anfang, Laut A"
-  },
+    "A": {
+        korean: "아",
+        sildam: "अ",
+        bedeutung: "Ah!, Anfang, Laut A"
+    },
 
-  "Muni": {
-    korean: "어머니",
-    sildam: "मुनि",
-    bedeutung: "Mutter"
-  },
+    "Muni": {
+        korean: "어머니",
+        sildam: "मुनि",
+        bedeutung: "Mutter"
+    },
 
-  "Kha": {
-    korean: "카",
-    sildam: "ख",
-    bedeutung: "Kha-Laut"
-  }
+    "Kha": {
+        korean: "카",
+        sildam: "ख",
+        bedeutung: "Kha-Laut"
+    },
 
-};   
+    "A-chim": {
+        korean: "아침",
+        sildam: "अचिम",
+        bedeutung: "Morgen"
+    },
 
-// =======================
-// Mapping
-// =======================
+    "An-ninsiya": {
+        korean: "안닌시야",
+        sildam: "अननिसिय",
+        bedeutung: "K-Wort"
+    }
 
-const mapDeutsch = {
-    h:"ㅎ", a:"ㅏ", b:"ㅂ", e:"ㅔ",
-    m:"ㅁ", u:"ㅜ", l:"ㄹ"
 };
 
-// =======================
-// Umwandlung
-// =======================
 
-function umwandeln() {
+// =====================================================
+// DEUTSCH → HANGUL MAPPING
+// =====================================================
 
-    let w = document.getElementById("wort").value.toLowerCase();
+const mapDeutsch = {
 
+    h: "ㅎ",
+    a: "ㅏ",
+    b: "ㅂ",
+    e: "ㅔ",
+
+    m: "ㅁ",
+    u: "ㅜ",
+    l: "ㄹ",
+
+    n: "ㄴ",
+    d: "ㄷ",
+    g: "ㄱ",
+    s: "ㅅ",
+    r: "ㄹ",
+    t: "ㅌ",
+    k: "ㅋ",
+    p: "ㅍ",
+    j: "ㅈ",
+    i: "ㅣ",
+    o: "ㅗ",
+    w: "ㅜ"
+};
+
+
+// =====================================================
+// UMVANDLUNG
+// =====================================================
+
+function umwandeln2() {
+
+    let w = document
+        .getElementById("wort2")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (!w) {
+        document.getElementById("deutsch").innerText = "";
+        document.getElementById("kbuchstaben").innerText = "";
+        document.getElementById("hangul").innerText = "";
+        document.getElementById("zurueck").innerText = "";
+        return;
+    }
+
+    // Zerlegung
     document.getElementById("deutsch").innerText =
         w.split("").join(" · ");
 
-    let k = w.split("").map(c => mapDeutsch[c] || "?");
+    // K-Buchstaben
+    let k = w
+        .split("")
+        .map(c => mapDeutsch[c] || "?");
 
     document.getElementById("kbuchstaben").innerText =
         k.join(" · ");
 
+    // Hangul
     if (w === "mul") {
-        document.getElementById("hangul").innerText = kombiniereMul(k);
+
+        document.getElementById("hangul").innerText =
+            kombiniereMul();
+
     }
     else if (w === "habe") {
-        document.getElementById("hangul").innerText = kombiniereHabe(k);
+
+        document.getElementById("hangul").innerText =
+            kombiniereHabe();
+
     }
     else {
-        document.getElementById("hangul").innerText = k.join("");
+
+        document.getElementById("hangul").innerText =
+            k.join("");
     }
 
-    let rueck = k.map(j =>
-        Object.keys(mapDeutsch).find(key => mapDeutsch[key] === j) || "?"
-    );
+    // Rückführung
+    let rueck = k.map(j => {
+
+        return Object.keys(mapDeutsch)
+            .find(key => mapDeutsch[key] === j) || "?";
+
+    });
 
     document.getElementById("zurueck").innerText =
         rueck.join("");
 }
 
-// =======================
+
+// =====================================================
 // MUL → 물
-// =======================
+// =====================================================
 
-function kombiniereMul(k) {
+function kombiniereMul() {
 
-    let code = 0xAC00 + (6 * 21 * 28) + (13 * 28) + 8;
+    let code =
+        0xAC00 +
+        (6 * 21 * 28) +
+        (13 * 28) +
+        8;
 
-    return String.fromCharCode(code); // 물
+    return String.fromCharCode(code);
 }
 
-// =======================
-// HABE → 하베
-// =======================
 
-function kombiniereHabe(k) {
+// =====================================================
+// HABE → 하베
+// =====================================================
+
+function kombiniereHabe() {
 
     let first =
-        String.fromCharCode(0xAC00 + (18 * 21 * 28));
+        String.fromCharCode(
+            0xAC00 + (18 * 21 * 28)
+        );
 
     let second =
-        String.fromCharCode(0xAC00 + (7 * 21 * 28) + (5 * 28));
+        String.fromCharCode(
+            0xAC00 +
+            (7 * 21 * 28) +
+            (5 * 28)
+        );
 
-    return first + second; // 하베
+    return first + second;
 }
 
-// =======================
-// Wörterbuchsuche
-// =======================
+
+// =====================================================
+// K-WORT ANZEIGEN
+// =====================================================
+
+function zeigeKWort(name) {
+
+    // Wenn ein Button einen Namen übergibt,
+    // wird dieser direkt verwendet.
+    if (name) {
+
+        document.getElementById("kwort2").value = name;
+
+    }
+
+    let gesucht =
+        document
+            .getElementById("kwort2")
+            .value
+            .trim();
+
+    let gefunden = Object.keys(kWorte).find(
+        key => key.toLowerCase() === gesucht.toLowerCase()
+    );
+
+    if (gefunden) {
+
+        let daten = kWorte[gefunden];
+
+        document.getElementById("ergebnis").innerText =
+
+            "Korean: " + daten.korean +
+
+            "\nSildam: " + daten.sildam +
+
+            "\nBedeutung: " + daten.bedeutung;
+
+    }
+    else {
+
+        document.getElementById("ergebnis").innerText =
+            "K-Wort nicht gefunden: " + gesucht;
+    }
+}
+
+
+// =====================================================
+// K-VOKABEL SUCHEN
+// =====================================================
 
 function sucheKWort() {
 
-    let w = document.getElementById("kwort")
-        .value
-        .trim()
-        .toLowerCase();
+    let w =
+        document
+            .getElementById("kwort2")
+            .value
+            .trim()
+            .toLowerCase();
 
     if (kVokabel[w]) {
 
         let d = kVokabel[w];
 
         let text =
+
             "ID: " + d.id +
+
             "\nK-Laut: " + d.k_laut +
+
             "\nSildam: " + d.sildam +
+
             "\nDeutsch: " + d.deutsch;
 
         if (d.hanmun) {
+
             text +=
+
                 "\nHanmun: " + d.hanmun +
+
                 "\nLesung: " + d.hanmun_reading;
         }
 
-        document.getElementById("ergebnis").innerText = text;
+        document.getElementById("ergebnis").innerText =
+            text;
 
-    } else {
+    }
+    else {
 
         document.getElementById("ergebnis").innerText =
-            "Kein K-Wort gefunden";
+            "Kein K-Wort gefunden: " + w;
     }
 }
 
+
+// =====================================================
+// BEISPIEL SETZEN
+// =====================================================
+
 function setzeBeispiel(w) {
 
-    document.getElementById("kwort").value = w;
+    document.getElementById("kwort2").value = w;
 
     sucheKWort();
 }
 
-// Startanzeige
-umwandeln();
+
+// =====================================================
+// START
+// =====================================================
+
+umwandeln2();
 
 </script>
-<input id="kwort" value="Mul">
-<button onclick="zeigeKWort()">K-Wort suchen</button>
-<pre id="ergebnis"></pre>
+
 </body>
 </html>
