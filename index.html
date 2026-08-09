@@ -638,6 +638,7 @@ const kVokabel = {
 };
 
 
+
 // =================================================
 // MAPPING
 // =================================================
@@ -723,15 +724,6 @@ const kWorte = {
     },
 
 
-    "An-ninsiya": {
-
-        korean: "안녕하세요",
-
-        basis: "안녕",
-
-        bedeutung: "Gruß, Hallo, Frieden"
-
-    },
 
 
     "Muni": {
@@ -753,9 +745,17 @@ const kWorte = {
 
         bedeutung: "Kha-Laut"
 
-    }
+    },
+
+ "An-ninsiya": {
+  "korean": "안녕하세요",
+  "basis": "안녕",
+  "sildam": "안능",
+  "bedeutung": "Gruß, Hallo, Frieden"
+}
 
 };
+
 
 
 // =================================================
@@ -956,13 +956,12 @@ function sucheKWort() {
 
 
     // -----------------------------
-    // zuerst habe / mul
+    // 1. zuerst alte Vokabeln
     // -----------------------------
 
     if (kVokabel[w]) {
 
         let d = kVokabel[w];
-
 
         let text =
             "ID: " +
@@ -994,33 +993,102 @@ function sucheKWort() {
         .getElementById("ergebnis")
         .innerText = text;
 
-
         return;
-
     }
 
 
     // -----------------------------
-    // danach K-Worte
+    // 2. neue vocab.json
     // -----------------------------
 
-    let gefunden =
-        Object
-        .keys(kWorte)
-        .find(
-            key =>
-            key.toLowerCase() === w
-        );
+    if (window.vocab) {
+
+console.log(window.vocab);
+
+        let gefunden =
+            Object
+            .keys(window.vocab)
+            .find(
+                key =>
+                key.toLowerCase() === w
+            );
 
 
-    if (gefunden) {
+        if (gefunden) {
 
-        zeigeKWort(gefunden);
+            let d = window.vocab[gefunden];
 
-        return;
+            let text = "";
 
+
+            if (d.deutsch) {
+                text +=
+                    "Deutsch: " +
+                    d.deutsch;
+            }
+
+
+            if (d.k_laut) {
+                text +=
+                    "\nK-Laut: " +
+                    d.k_laut;
+            }
+
+
+            if (d.hangul) {
+                text +=
+                    "\nHangul: " +
+                    d.hangul;
+            }
+
+
+            if (d.korean) {
+                text +=
+                    "\nKorean: " +
+                    d.korean;
+            }
+
+
+            if (d.basis) {
+                text +=
+                    "\nBasis: " +
+                    d.basis;
+            }
+
+
+            if (d.sildam) {
+                text +=
+                    "\nSildam: " +
+                    d.sildam;
+            }
+
+
+            if (d.hanmun) {
+                text +=
+                    "\nHanmun: " +
+                    d.hanmun;
+            }
+
+
+            if (d.bedeutung) {
+                text +=
+                    "\nBedeutung: " +
+                    d.bedeutung;
+            }
+
+
+            document
+            .getElementById("ergebnis")
+            .innerText = text;
+
+            return;
+        }
     }
 
+
+    // -----------------------------
+    // 3. nichts gefunden
+    // -----------------------------
 
     document
     .getElementById("ergebnis")
@@ -1044,6 +1112,21 @@ function setzeBeispiel(w) {
     sucheKWort();
 
 }
+
+
+// =================================================
+// VOCAB.JSON LADEN
+// =================================================
+
+fetch("vocab.json")
+    .then(response => response.json())
+    .then(daten => {
+        window.vocab = daten;
+        console.log("vocab.json geladen");
+    })
+    .catch(error => {
+        console.error("Fehler beim Laden von vocab.json:", error);
+    });
 
 
 // =================================================
