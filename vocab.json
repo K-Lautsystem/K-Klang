@@ -1,10 +1,74 @@
 {
-  "102": {
-    "k_laut": "ㅁㅜㄹ",
-    "klang": "Mul",
-    "sildam": "Mur",
-    "deutsch": "Wasser",
-    "hanmun": "水",
-    "hanmun_reading": "Mul-su"
-  }
+"A": {
+"korean": "아",
+"sildam": "अ",
+"bedeutung": "Ah!, Anfang, Laut A"
+},
+
+"A-chim": {
+"korean": "아침",
+"sildam": "a + chim",
+"bedeutung": "Morgen, Beginn des Lichts"
+},
+
+"Abschieden": {
+"sildam": "i / leave / viya / trennen / vah / carry away",
+"korean": "이별 (ibyeol)",
+"bedeutung": "Trennung, Loslassen, Weiterfließen"
+},
+
+"Aha-dhu-ing": {
+"sildam": "ah to speak / sprechen / 아하; dhu to nurture, nourish, raise, let grow; ing / ang",
+"korean": "아하둥둥",
+"bedeutung": "in Liebe wachsen lassen"
+},
+
+"Ahe": {
+"korean": "애",
+"sildam": "ahe",
+"bedeutung": "Der klagende Laut eines Kindes, wenn ihm etwas fehlt oder wenn es sich nicht wohlfühlt"
+},
+
+"A-isa-ta": {
+"sildam": "a (für), 이사 (König, Master, 권력자), ta (essentiell)",
+"bedeutung": "Klang- und Bedeutungsbestandteile"
+},
+
+"A-ji-ji": {
+"korean": "아지지 → 아지씨 → 아저씨",
+"sildam": "a-ji-ji; ji = König, Meister, Herrscher",
+"bedeutung": "Herr oder Meister; Anrede für einen ehrwürdigen Mann; aji / aje"
+},
+
+"An-ninsiya": {
+"korean": "안녕하세요",
+"basis": "안녕",
+"sildam": "안능",
+"bedeutung": "Gruß, Hallo, Frieden"
+},
+
+"Muni": {
+"korean": "어머니 / 엄마 / 어미",
+"sildam": "मुनि",
+"bedeutung": "Mutter; Muni = weise Person"
+},
+
+"Kha": {
+"korean": "카",
+"sildam": "ख",
+"bedeutung": "Kha-Laut"
+},
+
+"habe": {
+"deutsch": "haben",
+"k_laut": "ㅎㅏㅂㅔ",
+"hangul": "하베"
+},
+
+"mul": {
+"deutsch": "Wasser",
+"k_laut": "ㅁㅜㄹ",
+"hangul": "물",
+"hanmun": "水"
+}
 }
