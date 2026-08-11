@@ -604,39 +604,10 @@ mul
 // K-VOKABELN
 // =================================================
 
-const kVokabel = {
-
-    "habe": {
-
-        id: 101,
-
-        k_laut: "ㅎㅏㅂㅔ",
-
-        sildam: "Habe",
-
-        deutsch: "haben"
-
-    },
 
 
-    "mul": {
 
-        id: 102,
-
-        k_laut: "ㅁㅜㄹ",
-
-        sildam: "Mur",
-
-        deutsch: "Wasser",
-
-        hanmun: "水",
-
-        hanmun_reading: "Mul-su"
-
-    }
-
-};
-
+    
 
 
 // =================================================
@@ -700,62 +671,11 @@ const deutschKlang = {
 // K-WÖRTER
 // =================================================
 
-const kWorte = {
-
-    "A": {
-
-        korean: "아",
-
-        sildam: "अ",
-
-        bedeutung: "Ah!, Anfang, Laut A"
-
-    },
-
-
-    "A-chim": {
-
-        korean: "아침",
-
-        sildam: "a + chim",
-
-        bedeutung: "Morgen, Beginn des Lichts"
-
-    },
 
 
 
 
-    "Muni": {
-
-        korean: "어머니 / 엄마 / 어미",
-
-        sildam: "मुनि",
-
-        bedeutung: "Mutter; Muni = weise Person"
-
-    },
-
-
-    "Kha": {
-
-        korean: "카",
-
-        sildam: "ख",
-
-        bedeutung: "Kha-Laut"
-
-    },
-
- "An-ninsiya": {
-  "korean": "안녕하세요",
-  "basis": "안녕",
-  "sildam": "안능",
-  "bedeutung": "Gruß, Hallo, Frieden"
-}
-
-};
-
+    
 
 
 // =================================================
@@ -886,7 +806,7 @@ function kombiniereHabe(k) {
 
 function zeigeKWort(name) {
 
-    let daten = kWorte[name];
+  let daten = window.vocab[name];
 
 
     if (!daten) {
@@ -955,47 +875,11 @@ function sucheKWort() {
         .toLowerCase();
 
 
-    // -----------------------------
-    // 1. zuerst alte Vokabeln
-    // -----------------------------
-
-    if (kVokabel[w]) {
-
-        let d = kVokabel[w];
-
-        let text =
-            "ID: " +
-            d.id +
-
-            "\nK-Laut: " +
-            d.k_laut +
-
-            "\nSildam: " +
-            d.sildam +
-
-            "\nDeutsch: " +
-            d.deutsch;
 
 
-        if (d.hanmun) {
-
-            text +=
-                "\nHanmun: " +
-                d.hanmun +
-
-                "\nLesung: " +
-                d.hanmun_reading;
-
-        }
 
 
-        document
-        .getElementById("ergebnis")
-        .innerText = text;
-
-        return;
-    }
-
+    
 
     // -----------------------------
     // 2. neue vocab.json
