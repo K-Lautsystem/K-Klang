@@ -1,0 +1,1043 @@
+
+{
+  "A": {
+  "sildam": "a",
+  "deutsch": "Ah!, Anfang",
+  "korean": "아",
+  "bedeutung": "Ah-Laut; Anfang",
+  "k_laut": ["a-ᆢ", "a-a"]
+  },
+
+  "A-chim": {
+    "sildam": "a + chim",
+    "deutsch": "Morgen",
+    "korean": "아침",
+    "bedeutung": "Morgen; Beginn des Lichts"
+  },
+
+  "Abschieden": {
+    "sildam": "i / leave / viya / vah",
+    "deutsch": "Trennung, Abschied",
+    "korean": "이별",
+    "bedeutung": "Trennung; Loslassen"
+  },
+
+  "Aha-dhu-ing": {
+    "sildam": "ah + dhu + ing",
+    "deutsch": "wachsen lassen",
+    "korean": "아하둥둥",
+    "bedeutung": "In Liebe wachsen lassen"
+  },
+
+  "Ahe": {
+    "sildam": "ahe",
+    "deutsch": "klagender Laut",
+    "korean": "애",
+    "bedeutung": "Klagelaut eines Kindes"
+  },
+
+  "A-isa-ta": {
+    "sildam": "a + isa + ta",
+    "deutsch": "König, Meister",
+    "korean": "이사",
+    "bedeutung": "Klang- und Bedeutungsbestandteile"
+  },
+
+  "A-ji-ji": {
+    "sildam": "a-ji-ji",
+    "deutsch": "Herr, Meister",
+    "korean": "아지지 → 아지씨 → 아저씨",
+    "bedeutung": "Ehrwürdiger Mann; Meister"
+  },
+
+  "A-jim-ma": {
+    "sildam": "jim",
+    "deutsch": "Frau, Köchin",
+    "korean": "아줌마",
+    "bedeutung": "Frau; Bereiterin der Nahrung"
+  },
+
+  "A-ji-ta": {
+    "sildam": "a + ji",
+    "deutsch": "unbezwingbar",
+    "korean": "아짓트",
+    "bedeutung": "Nicht zu erobern; unbezwingbar"
+  },
+
+  "A-laska": {
+    "sildam": "a + laska",
+    "deutsch": "Land des Lichts",
+    "korean": "알라스카",
+    "bedeutung": "Ort, wo die Sonne kommt"
+  },
+
+  "Aloha": {
+    "sildam": "a + lo + ha",
+    "deutsch": "Gruß",
+    "korean": "알로하",
+    "bedeutung": "Gruß; Liebe und Wasserfluss"
+  },
+
+  "A-man": {
+    "sildam": "a + mana",
+    "deutsch": "Bewusstsein, Weisheit",
+    "korean": "아만",
+    "bedeutung": "Bewusstsein und Weisheit"
+  },
+
+  "Amri": {
+    "sildam": "a + mri",
+    "deutsch": "unsterblich",
+    "korean": "암리",
+    "bedeutung": "Wasser; Leben; Ursprung"
+  },
+
+  "Amuri": {
+    "sildam": "a + muri",
+    "deutsch": "Beständigkeit",
+    "korean": "아무리",
+    "bedeutung": "Leben trotz Tod; Beständigkeit"
+  },
+
+  "Aram": {
+    "sildam": "a + ram",
+    "deutsch": "Baum, Stärke",
+    "korean": "아람, 아름드리",
+    "bedeutung": "Baum; Stärke und Schönheit"
+  },
+
+  "Arghya": {
+    "sildam": "ar + ghya",
+    "deutsch": "Prinzessin, edle Frau",
+    "korean": "아르갸, 공주, 애기씨, 아가씨",
+    "bedeutung": "Prinzessin; edle Frau"
+  },
+
+  "An-ninsiya": {
+    "sildam": "an-ninsiya",
+    "deutsch": "Hallo, Gruß",
+    "korean": "안녕하세요",
+    "bedeutung": "Gruß; Frieden"
+  },
+
+  "A-sadal": {
+    "sildam": "a + saddhar",
+    "deutsch": "unbezwingbar",
+    "korean": "아사달",
+    "bedeutung": "Ursprung; unbezwingbar"
+  },
+
+  "A-sura": {
+    "sildam": "a + sura",
+    "deutsch": "Hölle, Ort ohne König",
+    "korean": "아수라, 지옥",
+    "bedeutung": "Ort ohne König; Hölle"
+  },
+
+  "Atz-lam": {
+    "sildam": "atz + lam",
+    "deutsch": "Land der Kraft",
+    "korean": "아츠람",
+    "bedeutung": "Ort der Kraft; Licht"
+  },
+
+  "Av": {
+    "sildam": "av",
+    "deutsch": "tragen",
+    "korean": "업다",
+    "bedeutung": "Auf dem Rücken tragen; Behutsamkeit"
+  },
+
+  "Aztek": {
+    "sildam": "az + tek",
+    "deutsch": "unbesiegbar",
+    "korean": "아즈텍",
+    "bedeutung": "Reich der Unbesiegbaren"
+  },
+
+  "Ban-go": {
+    "sildam": "pana-goth",
+    "deutsch": "König, Weiser",
+    "korean": "반고",
+    "bedeutung": "Weiser und Beschützer"
+  },
+
+  "Bara-boda": {
+    "sildam": "para-bhudha",
+    "deutsch": "betrachten, sehen, erkennen",
+    "korean": "바라보다",
+    "bedeutung": "Betrachten; Erkennen"
+  },
+
+  "Bi-yug": {
+    "sildam": "bi-yug",
+    "deutsch": "Küken",
+    "korean": "병아리",
+    "bedeutung": "Junges Leben; Neubeginn"
+  },
+
+  "Boel": {
+    "sildam": "boel",
+    "deutsch": "Biene",
+    "korean": "벌",
+    "bedeutung": "Biene"
+  },
+
+  "Brih": {
+    "sildam": "brih / vrih",
+    "deutsch": "wachsen, sich entfalten",
+    "korean": "브러나다",
+    "bedeutung": "Entfaltung; Wachstum"
+  },
+
+  "Bus": {
+    "sildam": "bbös",
+    "deutsch": "Bus",
+    "korean": "뻐스",
+    "bedeutung": "Bewegung; gemeinsames Reisen"
+  },
+
+  "Ba-ram": {
+    "sildam": "palam",
+    "deutsch": "Atem, Hauch, Bewegung",
+    "korean": "바람",
+    "bedeutung": "Atem; Bewegung"
+  },
+
+  "Bdö-na-da": {
+    "sildam": "bdö-na-da",
+    "deutsch": "weggehen, verlassen",
+    "korean": "떠나다",
+    "bedeutung": "Trennung; Aufbruch"
+  },
+
+  "Bodhi": {
+    "sildam": "mkit bodhi",
+    "deutsch": "Erwachen, Erkenntnis",
+    "korean": "보디, 깨달음, 각성",
+    "bedeutung": "Erwachen; Erkenntnis"
+  },
+
+  "Bom": {
+    "sildam": "bha-um",
+    "deutsch": "Frühling",
+    "korean": "봄",
+    "bedeutung": "Licht; Erwachen; Neubeginn"
+  },
+
+
+  "Canada": {
+    "sildam": "kha-na-dha",
+    "deutsch": "Land, wo die Sonne erreicht",
+    "korean": "캐나다",
+    "bedeutung": "Vom Licht berührtes Land"
+  },
+
+  "Cariya": {
+    "sildam": "ra / riya",
+    "deutsch": "Höflichkeit, Etikette, Reihenfolge",
+    "korean": "예절, 차례",
+    "bedeutung": "Moralisches Verhalten; Reihenfolge"
+  },
+
+  "Che-yong": {
+    "sildam": "che + yong",
+    "deutsch": "Funktion des Geistes",
+    "korean": "체용, 심체작용",
+    "bedeutung": "Geistige Funktion; Wirken des Bewusstseins"
+  },
+
+  "Chul-ga": {
+    "sildam": "pari-tya-vrije",
+    "deutsch": "loslassen, verlassen",
+    "korean": "출가",
+    "bedeutung": "Negative Gedanken loslassen"
+  },
+
+   "Cud-moksa": {
+  "sildam": "cud-moksa",
+  "deutsch": "Weiser, Befreier",
+  "korean": "주몽",
+  "bedeutung": "Der Weise, der befreit"
+  },
+
+  "Cula": {
+    "sildam": "cula",
+    "deutsch": "ernten, reif werden",
+    "korean": "철, 철나다",
+    "bedeutung": "Reife; Ernte"
+  },
+
+  "Dae-won-gyoeng-ji": {
+    "sildam": "dae-won-gyoeng-ji",
+    "deutsch": "vollkommene Weisheit",
+    "korean": "대원경지",
+    "bedeutung": "Weisheit des großen vollkommenen Spiegels"
+  },
+
+  "Dapda": {
+    "sildam": "tup-ta",
+    "deutsch": "heiß, starke Hitze",
+    "korean": "답다, 땁다",
+    "bedeutung": "Hitze; starke Wärme"
+  },
+
+  "Ddang-Gyoe-mi": {
+    "sildam": "sta-ghami",
+    "deutsch": "Dunkelheit nach Sonnenuntergang",
+    "korean": "낙조",
+    "bedeutung": "Übergang vom Licht zur Nacht"
+  },
+
+  "Dog": {
+    "sildam": "dogha",
+    "deutsch": "Weg der Reinheit",
+    "korean": "덕, 도덕, 도",
+    "bedeutung": "Moralische Läuterung; reiner Weg"
+  },
+
+  "Dri-dara": {
+    "sildam": "dri-dara",
+    "deutsch": "kräftig eindringen",
+    "korean": "들이밀다, 드리다라, 들이닥치다",
+    "bedeutung": "Eindringen; kräftig vordringen"
+  },
+
+  "Du": {
+    "sildam": "dhi",
+    "deutsch": "denken",
+    "korean": "두, 저것두",
+    "bedeutung": "Denken; das dort"
+  },
+
+  "Duryan-nime": {
+    "sildam": "duryan-nime",
+    "deutsch": "Mensch mit tragender Kraft",
+    "korean": "도련님, 뎨련님",
+    "bedeutung": "Starker Helfer; würdevoller Begleiter"
+  },
+
+  "Dya": {
+    "sildam": "dya",
+    "deutsch": "sterben",
+    "korean": "저세상",
+    "bedeutung": "Sterben; Übergang ins Lichtland"
+  },
+
+  "Dyu": {
+    "sildam": "dyu",
+    "deutsch": "sterben",
+    "korean": "저세상",
+    "bedeutung": "Sterben; Land des Lichts"
+  },
+
+  "Diya": {
+    "sildam": "diya",
+    "deutsch": "Licht, Feuer",
+    "korean": "저세상",
+    "bedeutung": "Licht; Feuer"
+  },
+
+  "Dyai": {
+    "sildam": "dyai",
+    "deutsch": "wild, grob",
+    "korean": "되이늠, 떼늠, 뙤놈",
+    "bedeutung": "Grob; ungehobelt"
+  },
+
+
+  "Edhen": {
+    "sildam": "edhen",
+    "deutsch": "Lebensgarten",
+    "korean": "에덴",
+    "bedeutung": "Garten des Lebens; Lichtgarten"
+  },
+
+  "Eka-ga-ga-so": {
+    "sildam": "eka-ga-ga-so",
+    "deutsch": "damit gehen, mitnehmen",
+    "korean": "이까가가소, 이까가소",
+    "bedeutung": "Damit gehen; das mitnehmen"
+  },
+
+  "Ga-di-oda": {
+    "sildam": "ga-dhi-o-dha",
+    "deutsch": "etwas haben, mitbringen",
+    "korean": "가지고, 가디오다",
+    "bedeutung": "Etwas haben; etwas mitbringen"
+  },
+
+  "Ga-do-da": {
+    "sildam": "ga-do-dha",
+    "deutsch": "gehen und das Ziel erreichen",
+    "korean": "가도다",
+    "bedeutung": "Den Weg gehen; das Ziel erreichen"
+  },
+
+  "Gal-ma": {
+    "sildam": "ghar-ma",
+    "deutsch": "mahlen, zerlegen",
+    "korean": "갈다",
+    "bedeutung": "Mahlen; zerlegen"
+  },
+
+  "Ga-ma-gyi": {
+    "sildam": "gha-ma",
+    "deutsch": "Krähe",
+    "korean": "까마귀",
+    "bedeutung": "Krähe"
+  },
+
+  "Ga-me": {
+    "sildam": "ga-me",
+    "deutsch": "überlegen, nachdenken",
+    "korean": "가메",
+    "bedeutung": "Überlegen; nachdenken"
+  },
+
+  "Ga-rak-i": {
+    "sildam": "ga-rak-i",
+    "deutsch": "Freude mit Gesang",
+    "korean": "가락이",
+    "bedeutung": "Gesang; Freude"
+  },
+
+  "Ga-ram": {
+    "sildam": "gha-aram",
+    "deutsch": "Haus im Wald",
+    "korean": "가람",
+    "bedeutung": "Haus im Wald; Tempel der Weisheit"
+  },
+
+  "Ga-ro-ga-da": {
+    "sildam": "ga-ro-ga-da",
+    "deutsch": "den Weg gehen",
+    "korean": "가로가다",
+    "bedeutung": "Den Weg gehen; zum Ziel gelangen"
+  },
+
+  "Ga-seyo": {
+    "sildam": "gaso",
+    "deutsch": "geh wohl",
+    "korean": "가세요",
+    "bedeutung": "Gehen; wohl gehen"
+  },
+
+  "Ga-siya": {
+    "sildam": "ga-siya",
+    "deutsch": "gehen, geschehen",
+    "korean": "가시야",
+    "bedeutung": "Recht zu gehen; geschehen"
+  },
+
+  "Gat": {
+    "sildam": "gat",
+    "deutsch": "Schutz, moralische Reue",
+    "korean": "갓, 방갓",
+    "bedeutung": "Schutz; Ausdruck moralischer Ehrfurcht"
+  },
+
+  "Genesis": {
+    "sildam": "genesis",
+    "deutsch": "Geburt, Ursprung",
+    "korean": "창세기",
+    "bedeutung": "Ursprung; Geburt"
+  },
+
+  "Ghaya-citta": {
+    "sildam": "ghaya-citta",
+    "deutsch": "verwirrter Geist",
+    "korean": "괫심,괴씸",
+    "bedeutung": "Verwirrung; chaotischer Geist"
+  },
+
+  "Gija": {
+    "sildam": "kha-ja",
+    "deutsch": "Sohn der Sonne",
+    "korean": "기자",
+    "bedeutung": "Sohn der Sonne; göttliche Herkunft"
+  },
+
+  "Gira": {
+    "sildam": "gira",
+    "deutsch": "sprechen, zustimmen",
+    "korean": "기라",
+    "bedeutung": "Sprechen; Zustimmung"
+  },
+
+  "Gye-gog": {
+    "sildam": "kukshi",
+    "deutsch": "Tal des Geistes",
+    "korean": "계곡",
+    "bedeutung": "Tal; Ort der inneren Lebenskraft"
+  },
+
+
+  "habe": {
+    "sildam": "habe",
+    "deutsch": "haben",
+    "korean": "하베",
+    "bedeutung": "haben"
+  },
+
+  "Human": {
+    "sildam": "homo",
+    "deutsch": "Mensch",
+    "korean": "후만 ",
+    "bedeutung": "Mensch aus dem Wasser, der denkt"
+  },
+
+  "I-Byoel": {
+    "sildam": "i-viya-vah",
+    "deutsch": "Trennung, Abschied",
+    "korean": "이별",
+    "bedeutung": "Abschied; Trennung"
+  },
+
+  "Ina-Kha": {
+    "sildam": "ina-kha",
+    "deutsch": "Mensch der Sonne",
+    "korean": "인카, 잉카 ",
+    "bedeutung": "Mensch des Sonnenlichts"
+  },
+
+  "Ia-ia": {
+    "sildam": "ia-ia",
+    "deutsch": "weggehen und kommen",
+    "korean": "이아 이아",
+    "bedeutung": "Abschied und Rückkehr"
+  },
+
+  "I-li-va": {
+    "sildam": "i-ri-wa",
+    "deutsch": "kommen und gehen",
+    "korean": "이리와바",
+    "bedeutung": "Kommen und Gehen im Kreis des Lebens"
+  },
+
+  "Il-na-ra": {
+    "sildam": "il-na-ra",
+    "deutsch": "steh auf, es ist Morgen",
+    "korean": "일나라",
+    "bedeutung": "Aufstehen; Beginn des Tages"
+  },
+
+  "Ir": {
+    "sildam": "ir",
+    "deutsch": "aufstehen, Tag",
+    "korean": "일",
+    "bedeutung": "Aufstehen; Tageslicht"
+  },
+
+  "Is": {
+    "sildam": "is",
+    "deutsch": "sein, vorhanden sein, besitzen",
+    "korean": "잇, 잇시야, 있습니다",
+    "bedeutung": "Vorhandensein; Besitz"
+  },
+
+  "Jabda": {
+    "sildam": "jabh",
+    "deutsch": "greifen, haben",
+    "korean": "잡다",
+    "bedeutung": "Greifen; etwas haben"
+  },
+
+  "Ji-hye": {
+    "sildam": "di-hye",
+    "deutsch": "Weisheit, Erkenntnis",
+    "korean": "지혜, 디ㅎ혜, 디ㆅㅖ",
+    "bedeutung": "Erkennen; Reinigung und Klärung des Geistes"
+  },
+
+ "Josoen": {
+  "sildam": "di-yo-sun, panchalas, khai-lasa",
+  "deutsch": "Land des Lichts",
+  "korean": "조선",
+  "bedeutung": "Sterne, Mond und Sonne, Pflanzen als kosmische Uhr"
+  },
+
+  "Ju-Mong": {
+    "sildam": "cud-moksa",
+    "deutsch": "weiser Befreier",
+    "korean": "주몽",
+    "bedeutung": "Der Weise, der befreit"
+  },
+
+ "Jive": {
+  "sildam": "jib",
+  "deutsch": "Haus",
+  "korean": "집",
+  "bedeutung": "Haus; Wohnort"
+  },
+
+  "Kal": {
+    "sildam": "kal",
+    "deutsch": "tun, machen, ausführen",
+    "korean": "걸때, 깔깔하다",
+    "bedeutung": "Tun; ausführen"
+  },
+
+  "Kasyapa": {
+    "sildam": "kasyapa",
+    "deutsch": "Kasyapa",
+    "korean": "가섭",
+    "bedeutung": "Weiser; Symbol der Erkenntnis"
+  },
+
+  "Kha": {
+    "sildam": "kha",
+    "deutsch": "Sonne, Licht",
+    "korean": "하, 히, 해",
+    "bedeutung": "Sonne; Licht"
+  },
+
+
+  "Khija": {
+    "sildam": "kha-khija",
+    "deutsch": "Sohn der Sonne",
+    "korean": "기자",
+    "bedeutung": "Sohn der Sonne"
+  },
+
+  "Ksiti-garbha": {
+    "sildam": "ksiti-garbha",
+    "deutsch": "Quelle des Lebens",
+    "korean": "지장보살",
+    "bedeutung": "Quelle des Lebens; Lebensgebärmutter"
+  },
+
+ "Kong": {
+  "sildam": "dhu",
+  "deutsch": "Bohne",
+  "korean": "콩",
+  "bedeutung": "Wachsen lassen; Wachstum"
+  },
+
+  "Kutta": {
+    "sildam": "kutta",
+    "deutsch": "Burg, Schloss",
+    "korean": "마고성",
+    "bedeutung": "Mago-Burg; Nordpolarstern"
+  },
+
+  "Mad": {
+    "sildam": "mad",
+    "deutsch": "Geschmack, gute Qualität",
+    "korean": "맛, 멋",
+    "bedeutung": "Guter Geschmack; Schönheit und Stil"
+  },
+
+ "Ma-al": {
+  "sildam": "ma-al",
+  "deutsch": "Ansammlung, Dorf",
+  "korean": "마을, ㅱ o+l (al), Ma-al (마알)",
+  "bedeutung": "Zusammenstehende Häuser; Dorf"
+ },
+
+  "Magha": {
+    "sildam": "magha",
+    "deutsch": "Lebensquelle, Kraft",
+    "korean": "마고할매, 맥,뇌물",
+    "bedeutung": "Lebensquelle; Kraft; Vermögen"
+  },
+
+  "Man": {
+    "sildam": "man",
+    "deutsch": "denken",
+    "korean": "문, 믄, 만, 먼",
+    "bedeutung": "Denken"
+  },
+
+  "Manura": {
+    "sildam": "manura",
+    "deutsch": "Ehefrau, tragen, transportieren",
+    "korean": "마누라, 실어가다",
+    "bedeutung": "Ehefrau; etwas tragen oder transportieren"
+  },
+
+  "Ma-sal": {
+    "sildam": "ma-sari, madhya", 
+    "deutsch": "gemeinsames Leben",
+    "korean": "마살, 뫼산    ",
+    "bedeutung": "Gemeinsam leben"
+  },
+
+ "Masalcho": {
+  "sildam": "ma-sal, madhya",
+  "deutsch": "Mitte, Zentrum",
+  "korean": "마살초, (ㅱ △̥ 초), 뫼산",
+  "bedeutung": "Innen; Mitte; Zentrum"
+ },
+
+  "Masil": {
+    "sildam": "ma-sil",
+    "deutsch": "sprechen, zusammen sein",
+    "korean": "마실",
+    "bedeutung": "Zusammensein; miteinander sprechen"
+  },
+
+
+"Mas-simi": {
+  "sildam": "mas-simi",
+  "deutsch": "Mensch mit Kraft und Verantwortung",
+  "korean": "머심 / 머슴 (심 : 힘 아니고 심)",
+  "bedeutung": "mas/rechnen, sim/Kraft, Haushaltsverwalter; Träger von Verantwortung"
+},
+
+
+  "Math": {
+    "sildam": "math",
+    "deutsch": "töten, Mühlstein",
+    "korean": "맡다, 맷돌",
+    "bedeutung": "Töten; Mühlstein"
+  },
+
+  "Mem": {
+    "sildam": "mem",
+    "deutsch": "Geist, Bewusstsein, Erinnerung",
+    "korean": "마음, 몸, 심왕",
+    "bedeutung": "Geist; Bewusstsein; Erinnerung"
+  },
+
+"Me-nri": {
+  "sildam": "me-nri",
+  "deutsch": "Schwiegertochter",
+  "korean": "메느리",
+  "bedeutung": "Schwiegertochter"
+  },
+
+
+  "Mo-lechi": {
+    "sildam": "molechi",
+    "deutsch": "nicht wissen",
+    "korean": "몰랐지, 모르다, 몰지각",
+    "bedeutung": "Nicht wissen; unwissend sein"
+  },
+
+ "Mom": {
+  "sildam": "cetta",
+  "deutsch": "Bewusstsein",
+  "korean": "몸, 마음",
+  "bedeutung": "Körper und Geist als Einheit"
+  },
+
+  "Munja": {
+    "sildam": "sas",
+    "deutsch": "Schrift, schreiben",
+    "korean": "문자",
+    "bedeutung": "Schrift; Zeichen"
+},
+
+
+"Mu-on": {
+  "sildam": "mun",
+  "deutsch": "Schweigen",
+  "korean": "무언",
+  "bedeutung": "Nicht gesagt; Schweigen"
+},
+
+"Mu-jin-jang": {
+  "sildam": "mu + jin-jang",
+  "deutsch": "unermesslich",
+  "korean": "무진장",
+  "bedeutung": "Grenzenlos; unermesslich viel"
+},
+
+"Mudöbda": {
+  "sildam": "mu-tup-ta",
+  "deutsch": "unsagbar heiß",
+  "korean": "무덥다",
+  "bedeutung": "Starke, unsagbare Hitze"
+},
+
+"mul": {
+  "sildam": "mr",
+  "deutsch": "Wasser",
+  "korean": ["믈", "물"],
+  "bedeutung": "Wasser",
+"k_laut": ["ㅁㅡㄹ", "ㅁㅜㄹ"]
+},
+
+ "Muni": {
+  "sildam": "muni",
+  "deutsch": "Mutter",
+  "korean": "어머니",
+  "bedeutung": "Mutter; weise Person"
+},
+
+
+"Nari": {
+  "sildam": "nari",
+  "deutsch": "Frau eines großen Hauses, Lilie",
+  "korean": "나리, 백합",
+  "bedeutung": "Frau eines großen Hauses"
+  },
+
+"Nalaka": {
+  "sildam": "nalaka",
+  "deutsch": "Reisstamm",
+  "korean": "나락",
+  "bedeutung": "Stamm der Reispflanze"
+},
+
+"Na-man": {
+  "sildam": "na-van",
+  "deutsch": "weiser Mann",
+  "korean": "나만",
+  "bedeutung": "Weisheit; weiser Mann"
+},
+
+"Nanta": {
+  "sildam": "luntha, runtha",
+  "deutsch": "Chaos, Verwirrung",
+  "korean": "난타",
+  "bedeutung": "Chaos; Verwirrung; Gesang und Klang"
+},
+
+"Ni-gro": {
+  "sildam": "nikda",
+  "deutsch": "reifen",
+  "korean": "닉다",
+  "bedeutung": "Reif werden"
+},
+
+"Ni-vame-mev-na": {
+  "sildam": "ni-vame-mev-na",
+  "deutsch": "Milch essen und trinken",
+  "korean": "니밤믓나",
+  "bedeutung": "Milch essen oder trinken"
+},
+
+"Noza": {
+  "sildam": "rajna",
+  "deutsch": "königliche Weisheit",
+  "korean": "노자",
+  "bedeutung": "Königliche Weisheit"
+},
+
+"Nuda": {
+  "sildam": "rud",
+  "deutsch": "Harnlassen",
+  "korean": "오줌누다",
+  "bedeutung": "Harnlassen"
+},
+
+"Nu-e": {
+  "sildam": "nivi, ni-vye",
+  "deutsch": "Seidenraupe",
+  "korean": "누에",
+  "bedeutung": "Seidenraupe; Textilherstellung"
+},
+
+
+"Pa-ang": {
+  "sildam": "bbang",
+  "deutsch": "Brot, Reis kochen",
+  "korean": "빵",
+  "bedeutung": "Brot; zum Essen gehen"
+},
+
+"Panorama": {
+  "sildam": "vi-kala",
+  "deutsch": "Zeit",
+  "korean": "파노라마",
+  "bedeutung": "Zeit; Farbe des Sonnenuntergangs"
+},
+
+"Ram-ram": {
+  "sildam": "rama-rama",
+  "deutsch": "mutig, schön",
+  "korean": "름름",
+  "bedeutung": "Mutig; schön"
+},
+
+"Risa": {
+  "sildam": "lisa, saya",
+  "deutsch": "Umzug, Haushalt",
+  "korean": "이사가다, 살림",
+  "bedeutung": "Weggehen; Haushalt"
+},
+
+"Rush": {
+  "sildam": "rush",
+  "deutsch": "töten, vernichten",
+  "korean": "육시랄놈",
+  "bedeutung": "Töten; vernichten"
+},
+
+"Sak": {
+  "sildam": "sak",
+  "deutsch": "Sprosse",
+  "korean": "싹",
+  "bedeutung": "Sprosse; Keim"
+},
+
+"Sata-guni": {
+  "sildam": "sattva-guni",
+  "deutsch": "Lebensquelle",
+  "korean": "사타구니",
+  "bedeutung": "Lebensquelle; Embryo; Gebärmutter"
+},
+
+"Schule": {
+  "sildam": "heg-gyo",
+  "deutsch": "Schule",
+  "korean": "핵교, 학",
+  "bedeutung": "Schule"
+},
+
+"Sciti": {
+  "sildam": "sciti",
+  "deutsch": "erkennen",
+  "korean": "과학, 스치다",
+  "bedeutung": "Erkennen"
+},
+
+"Siche": {
+  "sildam": "siche",
+  "deutsch": "Leiche",
+  "korean": "시체",
+  "bedeutung": "Leiche; Körper"
+},
+
+"Sinah": {
+  "sildam": "sinah",
+  "deutsch": "mächtig, Herr, Held",
+  "korean": "신난다",
+  "bedeutung": "Mächtig; Herr; Chef; Held; Adler"
+},
+
+"Sisi": {
+  "sildam": "sisi",
+  "deutsch": "Kot",
+  "korean": "시하다, 똥",
+  "bedeutung": "Urin; Kot"
+},
+
+"Syoem": {
+  "sildam": "syoem",
+  "deutsch": "Insel, Pause",
+  "korean": "셤",
+  "bedeutung": "Insel; Pause"
+},
+
+"So-sig": {
+  "sildam": "sosh-siksa, sik",
+  "deutsch": "Nachricht",
+  "korean": "소식, 봉화불",
+  "bedeutung": "Nachricht; sik/erkennen, Signal durch Feuer/sosh"
+},
+
+"Son-nime": {
+  "sildam": "son-nim",
+  "deutsch": "Gast",
+  "korean": "손님, 홍역, 장승, 천하대장군, 지하여장군",
+  "bedeutung": "Gast; Beschützer, Krankheit"
+},
+
+"Suc": {
+  "sildam": "suc",
+  "deutsch": "Holzkohle, reinigen",
+  "korean": "숯",
+  "bedeutung": "Reinigen; Filtern"
+},
+
+"Sukha-vati": {
+  "sildam": "sukha-vati",
+  "deutsch": "reines Ackerfeld",
+  "korean": "극락세계",
+  "bedeutung": "Feld der Reinheit; inneres Feld des Menschen"
+},
+
+"Sumeru": {
+  "sildam": "su-meru",
+  "deutsch": "Berg des Lebens",
+  "korean": "수미산",
+  "bedeutung": "Berg des Lebens; Lotusseed vessel"
+},
+
+"Syo-gom": {
+  "sildam": "sosh-gom",
+  "deutsch": "Salz",
+  "korean": "쇼곰, 소금",
+  "bedeutung": "so/brennen, gom/Sammlung, Reinigung durch Feuer; Sammlung von Energie"
+},
+
+"Tag": {
+  "sildam": "Ir",
+  "deutsch": "Tag, steh auf",
+  "korean": "날일, 일나라, ㅿi+l+ㆆ(ㅿ일ㆆ)",
+  "bedeutung": "Tag; Aufgehen der Sonne"
+},
+
+"The-the-ha": {
+  "sildam": "the-the-ha",
+  "deutsch": "Dort ist Wasser",
+  "korean": "저곳",
+  "bedeutung": "Dort ist Wasser; dort gibt es Wasser"
+},
+
+"Tupta": {
+  "sildam": "tup-ta",
+  "deutsch": "heiß",
+  "korean": "답다, 땁다",
+  "bedeutung": "Heiß; starke Hitze"
+},
+
+"Tusita-devanikaya": {
+  "sildam": "Tusita-sravada",
+  "deutsch": "Wohlbefinden, warme Welt",
+  "korean": "아랫목, 뜨시다, 도솔천(오해)",
+  "bedeutung": "Glückliches Wohlbefinden; Wärme"
+},
+
+"U-di-ga": {
+  "sildam": "ud-di-ga",
+  "deutsch": "gehen, aufwärts gehen",
+  "korean": "으디가",
+  "bedeutung": "Aufwärts gehen; sich bewegen, di/gehen"
+},
+
+"U-li-la Sains-deya": {
+  "sildam": "ulila-sains-deya",
+  "deutsch": "vorwärts gehen, Segen, werden",
+  "korean": "얼라, 상서롭다, 되야, 어랄라상사디여",
+  "bedeutung": "ulila/schnell, deya/werden, Vorwärtsgehen; segensreich"
+},
+
+"Vaya": {
+  "sildam": "vaya",
+  "deutsch": "Reis",
+  "korean": "벼",
+  "bedeutung": "Reis"
+},
+
+"Yahwe": {
+  "sildam": "Jahva",
+  "deutsch": "Wind, Luft, Lebensstimme",
+  "korean": "야훼, 여호와, 바람, 부러시다",
+  "bedeutung": "Atem, Wind; Luft; kosmische Lebensenergie"
+},
+
+"Yoni-sas": {
+  "sildam": "yoni-sas",
+  "deutsch": "yoni, Frauensymbol",
+  "korean": "요니, 요년",
+  "bedeutung": "yoni, Frauensymbol, Lebensquelle; Mantra"
+},
+
+"Zit-da": {
+  "sildam": "zit-da",
+  "deutsch": "machen, bauen",
+  "korean": "짓다, 딧다, 디스다",
+  "bedeutung": "Machen; bauen; errichten"
+},
+
+"Zosoen": {
+  "sildam": "di-yo-sun, panchalas, khai-lasa",
+  "deutsch": "Land des göttlichen Lichts",
+  "korean": "조선",
+  "bedeutung": "Land des Lichts, Weltuhr, Licht, Sonne"
+}
+}
